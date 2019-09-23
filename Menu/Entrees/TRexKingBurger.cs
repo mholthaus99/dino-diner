@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger: Entree
     {
         private bool bun = true;
         private bool lettuce = true;
@@ -15,31 +15,20 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
         private bool mayo = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "3 Steakburger Patties" };
-                if (bun) ingredients.Add("Whole-wheat bun");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                if (lettuce) ingredients.Add("Lettuce");
-                if (tomato) ingredients.Add("Tomato");
-                if (onion) ingredients.Add("Onion");
-                if (mayo) ingredients.Add("Mayo");
-
-                return ingredients;
-            }
-        }
-
         public TRexKingBurger()
         {
-            this.Price = 8.45;
-            this.Calories = 728;
+            Price = 8.45;
+            Calories = 728;
+
+            Ingredients.Add("3 steakburger patties");
+            if (bun) Ingredients.Add("Whole-wheat bun");
+            if (pickle) Ingredients.Add("Pickle");
+            if (ketchup) Ingredients.Add("Ketchup");
+            if (mustard) Ingredients.Add("Mustard");
+            if (lettuce) Ingredients.Add("Lettuce");
+            if (tomato) Ingredients.Add("Tomato");
+            if (onion) Ingredients.Add("Onion");
+            if (mayo) Ingredients.Add("Mayo");
         }
 
         public void HoldBun()

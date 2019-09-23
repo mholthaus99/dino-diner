@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class Fryceritops : Side
+    public class MezzorellaSticks : Side
     {
         public override Size Size
         {
@@ -19,28 +19,29 @@ namespace DinoDiner.Menu.Sides
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 222;
+                        Calories = 540;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 365;
+                        Calories = 610;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 480;
+                        Calories = 720;
                         break;
                 }
             }
         }
 
-        public Fryceritops()
+        public MezzorellaSticks()
         {
-            Calories = 222;
+            Calories = 540;
             Price = 0.99;
 
-            Ingredients.Add("potatoes");
+            Ingredients.Add("cheese product");
+            Ingredients.Add("breading");
             Ingredients.Add("vegetable oil");
-            Ingredients.Add("salt");
+
         }
     }
 }
