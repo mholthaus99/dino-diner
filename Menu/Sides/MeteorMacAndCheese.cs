@@ -6,17 +6,18 @@ namespace DinoDiner.Menu.Sides
 {
     public class MeteorMacAndCheese : Side
     {
+        private Size size = Size.Small;
 
         public override Size Size
         {
             get
             {
-                return Size;
+                return this.size;
             }
             set
             {
-                Size = value;
-                switch (Size)
+                size = value;
+                switch (value)
                 {
                     case Size.Small:
                         Price = 0.99;
@@ -34,14 +35,15 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
-        public MeteorMacAndCheese()
+        public MeteorMacAndCheese() 
         {
             Calories = 420;
             Price = 0.99;
-
-            Ingredients.Add("macaroni noodles");
-            Ingredients.Add("cheese product");
-            Ingredients.Add("pork sausage");
+        
+            // Ingredients = new List<string>();
+            Ingredients.Add("Macaroni Noodles");
+            Ingredients.Add("Cheese Product");
+            Ingredients.Add("Pork Sausage");
 
         }
     }

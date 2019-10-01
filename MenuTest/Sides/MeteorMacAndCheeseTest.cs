@@ -39,48 +39,60 @@ namespace MenuTest.Sides
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = Size.Medium;
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese
+            {
+                Size = Size.Medium
+            };
             Assert.Equal(1.45, mmc.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForMedium()
         {
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = Size.Medium;
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<uint>(490, mmc.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = Size.Medium;
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<Size>(Size.Medium, mmc.Size);
         }
 
         [Fact]
         public void ShouldUseCorrectPriceForLarge()
         {
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = Size.Large;
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese
+            {
+                Size = Size.Large
+            };
             Assert.Equal(1.95, mmc.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForLarge()
         {
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = Size.Large;
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese
+            {
+                Size = Size.Large
+            };
             Assert.Equal<uint>(520, mmc.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = Size.Large;
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese
+            {
+                Size = Size.Large
+            };
             Assert.Equal<Size>(Size.Large, mmc.Size);
         }
     }

@@ -13,6 +13,7 @@ namespace DinoDiner.Menu.Entrees
             NuggetCount++;
             Calories += 59;
             Price += 0.25;
+            Ingredients.Add("Chicken Nugget");
         }
 
         public DinoNuggets()
@@ -21,7 +22,11 @@ namespace DinoDiner.Menu.Entrees
             Calories = 6 * 59;
             NuggetCount = 6;
 
-            Ingredients.Add("chicken nuggets");
+           // Ingredients = new List<string>();
+            for (int i = 0; i <= 5; i++)
+            {
+                Ingredients.Add("Chicken Nugget");
+            }
         }
     }
 }

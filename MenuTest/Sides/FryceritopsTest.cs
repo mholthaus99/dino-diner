@@ -39,48 +39,60 @@ namespace MenuTest.Sides
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {
-            Fryceritops ft = new Fryceritops();
-            ft.Size = Size.Medium;
+            Fryceritops ft = new Fryceritops
+            {
+                Size = Size.Medium
+            };
             Assert.Equal(1.45, ft.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForMedium()
         {
-            Fryceritops ft = new Fryceritops();
-            ft.Size = Size.Medium;
+            Fryceritops ft = new Fryceritops
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<uint>(365, ft.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
-            Fryceritops ft = new Fryceritops();
-            ft.Size = Size.Medium;
+            Fryceritops ft = new Fryceritops
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<Size>(Size.Medium, ft.Size);
         }
 
         [Fact]
         public void ShouldUseCorrectPriceForLarge()
         {
-            Fryceritops ft = new Fryceritops();
-            ft.Size = Size.Large;
+            Fryceritops ft = new Fryceritops
+            {
+                Size = Size.Large
+            };
             Assert.Equal(1.95, ft.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForLarge()
         {
-            Fryceritops ft = new Fryceritops();
-            ft.Size = Size.Large;
+            Fryceritops ft = new Fryceritops
+            {
+                Size = Size.Large
+            };
             Assert.Equal<uint>(480, ft.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
-            Fryceritops ft = new Fryceritops();
-            ft.Size = Size.Large;
+            Fryceritops ft = new Fryceritops
+            {
+                Size = Size.Large
+            };
             Assert.Equal<Size>(Size.Large, ft.Size);
         }
     }

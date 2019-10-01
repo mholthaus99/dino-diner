@@ -39,48 +39,60 @@ namespace MenuTest.Sides
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {
-            MezzorellaSticks ms = new MezzorellaSticks();
-            ms.Size = Size.Medium;
+            MezzorellaSticks ms = new MezzorellaSticks
+            {
+                Size = Size.Medium
+            };
             Assert.Equal(1.45, ms.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForMedium()
         {
-            MezzorellaSticks ms = new MezzorellaSticks();
-            ms.Size = Size.Medium;
+            MezzorellaSticks ms = new MezzorellaSticks
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<uint>(610, ms.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
-            MezzorellaSticks ms = new MezzorellaSticks();
-            ms.Size = Size.Medium;
+            MezzorellaSticks ms = new MezzorellaSticks
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<Size>(Size.Medium, ms.Size);
         }
 
         [Fact]
         public void ShouldUseCorrectPriceForLarge()
         {
-            MezzorellaSticks ms = new MezzorellaSticks();
-            ms.Size = Size.Large;
+            MezzorellaSticks ms = new MezzorellaSticks
+            {
+                Size = Size.Large
+            };
             Assert.Equal(1.95, ms.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForLarge()
         {
-            MezzorellaSticks ms = new MezzorellaSticks();
-            ms.Size = Size.Large;
+            MezzorellaSticks ms = new MezzorellaSticks
+            {
+                Size = Size.Large
+            };
             Assert.Equal<uint>(720, ms.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
-            MezzorellaSticks ms = new MezzorellaSticks();
-            ms.Size = Size.Large;
+            MezzorellaSticks ms = new MezzorellaSticks
+            {
+                Size = Size.Large
+            };
             Assert.Equal<Size>(Size.Large, ms.Size);
         }
     }

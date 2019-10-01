@@ -20,8 +20,11 @@ namespace DinoDiner.Menu.Entrees
             Price = 8.45;
             Calories = 728;
 
-            Ingredients.Add("3 steakburger patties");
-            if (bun) Ingredients.Add("Whole-wheat bun");
+           // Ingredients = new List<string>();
+            Ingredients.Add("Steakburger Pattie");
+            Ingredients.Add("Steakburger Pattie");
+            Ingredients.Add("Steakburger Pattie");
+            if (bun) Ingredients.Add("Whole Wheat Bun");
             if (pickle) Ingredients.Add("Pickle");
             if (ketchup) Ingredients.Add("Ketchup");
             if (mustard) Ingredients.Add("Mustard");
@@ -34,38 +37,46 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.bun = false;
+            Ingredients.Remove("Whole Wheat Bun");
         }
 
         public void HoldPickle()
         {
-            this.bun = false;
+            this.pickle = false;
+            Ingredients.Remove("Pickle");
         }
         public void HoldKetchup()
         {
-            this.bun = false;
+            this.ketchup = false;
+            Ingredients.Remove("Ketchup");
         }
         public void HoldMustard()
         {
             this.mustard = false;
+            Ingredients.Remove("Mustard");
         }
 
         public void HoldLettuce()
         {
+            Ingredients.Remove("Lettuce");
             this.lettuce = false;
         }
 
         public void HoldTomato()
         {
+            Ingredients.Remove("Tomato");
             this.tomato = false;
         }
 
         public void HoldOnion()
         {
+            Ingredients.Remove("Onion");
             this.onion = false;
         }
 
         public void HoldMayo()
         {
+            Ingredients.Remove("Mayo");
             this.mayo = false;
         }
     }

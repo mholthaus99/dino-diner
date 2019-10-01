@@ -10,9 +10,9 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 7.21;
             this.Calories = 318;
-
-            Ingredients.Add("chicken");
-            Ingredients.Add("wing sauce");
+           // Ingredients = new List<string>();
+            Ingredients.Add("Chicken");
+            Ingredients.Add("Wing Sauce");
         }
     }
 }

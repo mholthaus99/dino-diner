@@ -16,29 +16,33 @@ namespace DinoDiner.Menu.Entrees
         {
             Price = 5.15;
             Calories = 621;
-
-            Ingredients.Add("steakburger pattie");
-            if (bun) Ingredients.Add("whole-wheat bun");
-            if (pickle) Ingredients.Add("pickle");
-            if (ketchup) Ingredients.Add("ketchup");
-            if (mustard) Ingredients.Add("mustard");
+            //Ingredients = new List<string>();
+            Ingredients.Add("Steakburger Pattie");
+            if (bun) Ingredients.Add("Whole Wheat Bun");
+            if (pickle) Ingredients.Add("Pickle");
+            if (ketchup) Ingredients.Add("Ketchup");
+            if (mustard) Ingredients.Add("Mustard");
 
         }
 
         public void HoldBun()
         {
+            Ingredients.Remove("Whole Wheat Bun");
             this.bun = false;
         }
         public void HoldPickle()
         {
+            Ingredients.Remove("Pickle");
             this.pickle = false;
         }
         public void HoldKetchup()
         {
+            Ingredients.Remove("Ketchup");
             this.ketchup = false;
         }
         public void HoldMustard()
         {
+            Ingredients.Remove("Mustard");
             this.mustard = true;
         }
     }

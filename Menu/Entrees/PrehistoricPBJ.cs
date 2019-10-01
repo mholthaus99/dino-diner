@@ -12,19 +12,22 @@ namespace DinoDiner.Menu.Entrees
             Price = 6.52;
             Calories = 483;
 
-            Ingredients.Add("bread");
-            if (peanutButter) Ingredients.Add("peanut butter");
-            if (jelly) Ingredients.Add("jelly");
+           // Ingredients = new List<string>();
+            Ingredients.Add("Bread");
+            if (peanutButter) Ingredients.Add("Peanut Butter");
+            if (jelly) Ingredients.Add("Jelly");
 
         }
 
         public void HoldPeanutButter()
         {
+            Ingredients.Remove("Peanut Butter");
             this.peanutButter = false;
         }
 
         public void HoldJelly()
         {
+            Ingredients.Remove("Jelly");
             this.jelly = false;
         }
     }

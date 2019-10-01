@@ -6,16 +6,18 @@ namespace DinoDiner.Menu.Sides
 {
     public class MezzorellaSticks : Side
     {
+
+        private Size size = Size.Small;
         public override Size Size
         {
             get
             {
-                return Size;
+                return this.size;
             }
             set
             {
-                Size = value;
-                switch (Size)
+                size = value;
+                switch (value)
                 {
                     case Size.Small:
                         Price = 0.99;
@@ -33,14 +35,15 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
-        public MezzorellaSticks()
+        public MezzorellaSticks() 
         {
             Calories = 540;
             Price = 0.99;
-
-            Ingredients.Add("cheese product");
-            Ingredients.Add("breading");
-            Ingredients.Add("vegetable oil");
+           
+            //Ingredients = new List<string>();
+            Ingredients.Add("Cheese Product");
+            Ingredients.Add("Breading");
+            Ingredients.Add("Vegetable Oil");
 
         }
     }

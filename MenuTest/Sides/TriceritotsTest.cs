@@ -39,48 +39,60 @@ namespace MenuTest.Sides
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {
-            Triceritots tt = new Triceritots();
-            tt.Size = Size.Medium;
+            Triceritots tt = new Triceritots
+            {
+                Size = Size.Medium
+            };
             Assert.Equal(1.45, tt.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForMedium()
         {
-            Triceritots tt = new Triceritots();
-            tt.Size = Size.Medium;
+            Triceritots tt = new Triceritots
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<uint>(410, tt.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
-            Triceritots tt = new Triceritots();
-            tt.Size = Size.Medium;
+            Triceritots tt = new Triceritots
+            {
+                Size = Size.Medium
+            };
             Assert.Equal<Size>(Size.Medium, tt.Size);
         }
 
         [Fact]
         public void ShouldUseCorrectPriceForLarge()
         {
-            Triceritots tt = new Triceritots();
-            tt.Size = Size.Large;
+            Triceritots tt = new Triceritots
+            {
+                Size = Size.Large
+            };
             Assert.Equal(1.95, tt.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForLarge()
         {
-            Triceritots tt = new Triceritots();
-            tt.Size = Size.Large;
+            Triceritots tt = new Triceritots
+            {
+                Size = Size.Large
+            };
             Assert.Equal<uint>(590, tt.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
-            Triceritots tt = new Triceritots();
-            tt.Size = Size.Large;
+            Triceritots tt = new Triceritots
+            {
+                Size = Size.Large
+            };
             Assert.Equal<Size>(Size.Large, tt.Size);
         }
     }

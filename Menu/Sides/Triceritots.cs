@@ -6,16 +6,18 @@ namespace DinoDiner.Menu.Sides
 {
     public class Triceritots : Side
     {
+        private Size size = Size.Small;
+
         public override Size Size
         {
             get
             {
-                return Size;
+                return this.size;
             }
             set
             {
-                Size = value;
-                switch (Size)
+                size = value;
+                switch (value)
                 {
                     case Size.Small:
                         Price = 0.99;
@@ -33,14 +35,15 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
-        public Triceritots()
+        public Triceritots() 
         {
-            Calories = 540;
+            Calories = 352;
             Price = 0.99;
-
-            Ingredients.Add("potatoes");
-            Ingredients.Add("salt");
-            Ingredients.Add("vegetable oil");
+         
+            //Ingredients = new List<string>();
+            Ingredients.Add("Potato");
+            Ingredients.Add("Salt");
+            Ingredients.Add("Vegetable Oil");
 
         }
     }

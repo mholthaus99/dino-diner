@@ -6,16 +6,19 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops : Side
     {
+
+        private Size size = Size.Small;
+        
         public override Size Size
         {
             get
             {
-                return Size;
+                return this.size;
             }
             set
             {
-                Size = value;
-                switch (Size)
+                this.size = value;
+                switch (value)
                 {
                     case Size.Small:
                         Price = 0.99;
@@ -35,12 +38,14 @@ namespace DinoDiner.Menu.Sides
 
         public Fryceritops()
         {
+            
             Calories = 222;
             Price = 0.99;
-
-            Ingredients.Add("potatoes");
-            Ingredients.Add("vegetable oil");
-            Ingredients.Add("salt");
+         
+            // Ingredients = new List<string>();
+            Ingredients.Add("Potato");
+            Ingredients.Add("Vegetable Oil");
+            Ingredients.Add("Salt");
         }
     }
 }
