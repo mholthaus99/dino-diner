@@ -36,12 +36,13 @@ namespace DinoDiner.Menu.Drinks
 
         }
 
+      
         /// <summary>
         /// Gets or sets the size
         /// </summary>
         public abstract Size Size { get; set; }
 
-        private bool ice = false;
+        private bool ice = true;
         /// <summary>
         /// Gets or sets ice
         /// </summary>
@@ -49,18 +50,19 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                return ice;
+                return this.ice;
             }
             set
             {
-                ice = value;
+                this.ice = value;
+
             }
         }
 
      
         public void HoldIce()
         {
-            Ice = false;
+            this.ice = false;
         }
 
     }

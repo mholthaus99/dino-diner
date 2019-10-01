@@ -8,12 +8,18 @@ namespace MenuTest.Drinks
 {
     public class SodaSaurusTest
     {
-        public SodaSaurusTest()
-        {
-
-        }
-
+       
         //1
+        [Fact]
+        public void CanBeEachPossibleFlavor()
+        {
+            Sodasaurus s = new Sodasaurus();
+            for(int i = 0; i < 7; i++)
+            {
+                s.Flavor = (SodasaurusFlavor)i;
+                Assert.Equal(i, (int) s.Flavor);
+            }
+        }
 
         //2
         [Fact]
@@ -62,6 +68,8 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Cane Sugar", s.Ingredients);
             Assert.Equal<int>(3, s.Ingredients.Count);
         }
+
+    
 
         //3
         [Fact]

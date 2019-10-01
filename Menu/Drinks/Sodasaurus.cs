@@ -46,9 +46,6 @@ namespace DinoDiner.Menu.Drinks
             Price = 1.50;
             Calories = 112;
 
-            Ice = true;
-            //Ingredients = new List<string>();
-            
             Ingredients.Add("Water");
             Ingredients.Add("Natural Flavors");
             Ingredients.Add("Cane Sugar");

@@ -6,102 +6,101 @@ using Xunit;
 
 namespace MenuTest.Drinks
 {
-    public class JurrasicJavaTest
+    public class WaterTest
     {
         //1
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            JurrasicJava s = new JurrasicJava();
-            Assert.Equal(0.59, s.Price, 2);
+            Water s = new Water();
+            Assert.Equal(0.10, s.Price, 2);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            JurrasicJava s = new JurrasicJava();
-            Assert.Equal<uint>(2, s.Calories);
+            Water s = new Water();
+            Assert.Equal<uint>(0, s.Calories);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultIce()
         {
-            JurrasicJava s = new JurrasicJava();
-            Assert.False(s.Ice);
+            Water s = new Water();
+            Assert.True(s.Ice);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
-            JurrasicJava s = new JurrasicJava();
+            Water s = new Water();
             Assert.Equal<Size>(Size.Small, s.Size);
         }
 
         [Fact]
-        public void ShouldHaveCorrectDefaultSpaceForCream()
+        public void ShouldHaveDefaultLemon()
         {
-            JurrasicJava s = new JurrasicJava();
-            Assert.False(s.RoomForCream);
+            Water s = new Water();
+            Assert.False(s.Lemon);
         }
 
-       
 
         //3
         [Fact]
-        public void InvokingAddICeResultsInIcePropertyBeingTrue()
+        public void InvokingHoldIceResultsPropertyInBeingFalse()
         {
-            JurrasicJava s = new JurrasicJava();
-            s.AddIce();
-            Assert.True(s.Ice);
+            Water s = new Water();
+            s.HoldIce();
+            Assert.False(s.Ice);
         }
 
         //4
         [Fact]
-        public void InvokingLeaveRoomForCreamnPropertyMakesTrue()
+        public void InvokingAddLemonMakesLemonTrue()
         {
-            JurrasicJava s = new JurrasicJava();
-            s.LeaveRoomForCream();
-            Assert.True(s.RoomForCream);
+            Water s = new Water();
+            s.AddLemon();
+            Assert.True(s.Lemon);
         }
 
       
+
         //5
         [Fact]
         public void ShouldHaveCorrectDefaultIngedients()
         {
-            JurrasicJava s = new JurrasicJava();
+            Water s = new Water();
             Assert.Contains<string>("Water", s.Ingredients);
-            Assert.Contains<string>("Coffee", s.Ingredients);
-            Assert.Equal<int>(2, s.Ingredients.Count);
+            Assert.Equal<int>(1, s.Ingredients.Count);
         }
 
-      
+
 
         //2
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {
-            JurrasicJava s = new JurrasicJava
+            Water s = new Water
             {
                 Size = Size.Medium
             };
-            Assert.Equal(0.99, s.Price, 2);
+            Assert.Equal(0.10, s.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForMedium()
         {
-            JurrasicJava s = new JurrasicJava
+            Water s = new Water
             {
                 Size = Size.Medium
             };
-            Assert.Equal<uint>(4, s.Calories);
+            Assert.Equal<uint>(0, s.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
-            JurrasicJava s = new JurrasicJava
+            Water s = new Water
             {
                 Size = Size.Medium
             };
@@ -111,27 +110,27 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldUseCorrectPriceForLarge()
         {
-            JurrasicJava s = new JurrasicJava
+            Water s = new Water
             {
                 Size = Size.Large
             };
-            Assert.Equal(1.49, s.Price, 2);
+            Assert.Equal(0.10, s.Price, 2);
         }
 
         [Fact]
         public void ShouldUseCorrectCaloriesForLarge()
         {
-            JurrasicJava s = new JurrasicJava
+            Water s = new Water
             {
                 Size = Size.Large
             };
-            Assert.Equal<uint>(8, s.Calories);
+            Assert.Equal<uint>(0, s.Calories);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
-            JurrasicJava s = new JurrasicJava
+            Water s = new Water
             {
                 Size = Size.Large
             };

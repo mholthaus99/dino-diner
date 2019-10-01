@@ -4,18 +4,19 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    class Tyrannotea : Drink
+    public class Tyrannotea : Drink
     {
+        private Size size = Size.Small;
         public override Size Size
         {
             get
             {
-                return Size;
+                return this.size;
             }
             set
             {
-                Size = value;
-                switch (Size)
+                this.size = value;
+                switch (value)
                 {
                     case Size.Small:
                         Price = 0.99;
@@ -30,10 +31,11 @@ namespace DinoDiner.Menu.Drinks
                         Calories = 32;
                         break;
                 }
+                if (sweet) { Calories *= 2; }
             }
         }
 
-        private bool sweet;
+        private bool sweet = false;
         public bool Sweet
         {
             get
@@ -42,30 +44,45 @@ namespace DinoDiner.Menu.Drinks
             }
             set
             {
-                this.sweet = value;
-                if (value == true)
+                //adding sweetener
+                if (value == true && this.sweet == false)
                 {
                     Calories *= 2;
+                    Ingredients.Add("Cane Sugar");
+                    this.sweet = value;
+                }
+                //removing sweetener
+                if(value == false && this.sweet == true)
+                {
+                    Calories /= 2;
+                    Ingredients.Remove("Cane Sugar");
+                    this.sweet = value;
                 }
             }
         }
-        public bool Lemon { get; set; }
+        private bool lemon = false;
+
+        public bool Lemon
+        {
+            get
+            {
+                return this.lemon;
+            }
+        }
+
         public Tyrannotea() 
         {
             Price = 0.99;
             Calories = 8;
 
-            Sweet = false;
-            Lemon = false;
-            Ice = true;
-            //Ingredients = new List<string>();
             Ingredients.Add("Water");
             Ingredients.Add("Tea");
         }
 
         public void AddLemon()
         {
-            Lemon = true;
+            Ingredients.Add("Lemon");
+            this.lemon = true;
         }
     }
 }
