@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// TRexKingBurger entree class
+    /// </summary>
     public class TRexKingBurger: Entree
     {
         private bool bun = true;
@@ -15,12 +18,14 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
         private bool mayo = true;
 
+        /// <summary>
+        /// TRexKingBurger constructor
+        /// </summary>
         public TRexKingBurger()
         {
             Price = 8.45;
             Calories = 728;
 
-           // Ingredients = new List<string>();
             Ingredients.Add("Steakburger Pattie");
             Ingredients.Add("Steakburger Pattie");
             Ingredients.Add("Steakburger Pattie");
@@ -34,46 +39,70 @@ namespace DinoDiner.Menu.Entrees
             if (mayo) Ingredients.Add("Mayo");
         }
 
+        /// <summary>
+        /// Hold bun
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
             Ingredients.Remove("Whole Wheat Bun");
         }
 
+        /// <summary>
+        /// Hold pickle
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
             Ingredients.Remove("Pickle");
         }
+        /// <summary>
+        /// Hold ketchup
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
             Ingredients.Remove("Ketchup");
         }
+        /// <summary>
+        /// Hold mustard
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
             Ingredients.Remove("Mustard");
         }
 
+        /// <summary>
+        /// Hold lettuce
+        /// </summary>
         public void HoldLettuce()
         {
             Ingredients.Remove("Lettuce");
             this.lettuce = false;
         }
 
+        /// <summary>
+        /// Hold tomato
+        /// </summary>
         public void HoldTomato()
         {
             Ingredients.Remove("Tomato");
             this.tomato = false;
         }
 
+        /// <summary>
+        /// Hold onion
+        /// </summary>
         public void HoldOnion()
         {
             Ingredients.Remove("Onion");
             this.onion = false;
         }
 
+        /// <summary>
+        /// Hold mayo
+        /// </summary>
         public void HoldMayo()
         {
             Ingredients.Remove("Mayo");

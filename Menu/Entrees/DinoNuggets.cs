@@ -4,10 +4,19 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// DinoNuggets entree class
+    /// </summary>
     public class DinoNuggets : Entree
     { 
+        /// <summary>
+        /// gets/sets the nugget count
+        /// </summary>
         public int NuggetCount { get; set; }
 
+        /// <summary>
+        /// adds nugget to side order
+        /// </summary>
         public void AddNugget()
         {
             NuggetCount++;
@@ -16,13 +25,15 @@ namespace DinoDiner.Menu.Entrees
             Ingredients.Add("Chicken Nugget");
         }
 
+        /// <summary>
+        /// DinoNuggets constructor
+        /// </summary>
         public DinoNuggets()
         {
             Price = 4.25;
             Calories = 6 * 59;
             NuggetCount = 6;
 
-           // Ingredients = new List<string>();
             for (int i = 0; i <= 5; i++)
             {
                 Ingredients.Add("Chicken Nugget");

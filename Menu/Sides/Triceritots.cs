@@ -4,10 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Triceritots side class
+    /// </summary>
     public class Triceritots : Side
     {
         private Size size = Size.Small;
 
+        /// <summary>
+        /// gets/sets the side size
+        /// </summary>
         public override Size Size
         {
             get
@@ -35,12 +41,15 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+
+        /// <summary>
+        /// Triceritots constructor
+        /// </summary>
         public Triceritots() 
         {
             Calories = 352;
             Price = 0.99;
          
-            //Ingredients = new List<string>();
             Ingredients.Add("Potato");
             Ingredients.Add("Salt");
             Ingredients.Add("Vegetable Oil");

@@ -2,11 +2,17 @@
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// PrehistoricPBJ entree class
+    /// </summary>
     public class PrehistoricPBJ : Entree
     {
         private bool peanutButter = true;
         private bool jelly = true;
 
+        /// <summary>
+        /// PrehistoricPBJ constructor
+        /// </summary>
         public PrehistoricPBJ()
         {
             Price = 6.52;
@@ -19,12 +25,19 @@ namespace DinoDiner.Menu.Entrees
 
         }
 
+        /// <summary>
+        /// Hold peanut butter, remove it from ingredients
+        /// </summary>
         public void HoldPeanutButter()
         {
-            Ingredients.Remove("Peanut Butter");
+                Ingredients.Remove("Peanut Butter");
+            
             this.peanutButter = false;
         }
 
+        /// <summary>
+        /// Hold jelly, remove if from ingredients
+        /// </summary>
         public void HoldJelly()
         {
             Ingredients.Remove("Jelly");

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Entree base class
+    /// </summary>
     public abstract class Entree
     {
         /// <summary>
@@ -16,7 +19,7 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public uint Calories { get; set; }
 
-        private List<string> ingredients = new List<string>();
+        private readonly List<string> ingredients = new List<string>();
 
         /// <summary>
         /// Gets the ingredients list

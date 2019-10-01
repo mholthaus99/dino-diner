@@ -4,8 +4,14 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// PterodactylWings entree class
+    /// </summary>
     public class PterodactylWings :Entree
     {
+        /// <summary>
+        /// PterodatylWings constructor
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;

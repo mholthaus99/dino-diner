@@ -4,14 +4,28 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-
+    /// <summary>
+    /// drink sizez
+    /// </summary>
     public enum Size
     {
+        /// <summary>
+        /// Small
+        /// </summary>
         Small,
+        /// <summary>
+        /// Medium
+        /// </summary>
         Medium, 
+        /// <summary>
+        /// Large
+        /// </summary>
         Large
     }
 
+    /// <summary>
+    /// Base class of Side
+    /// </summary>
     public abstract class Side
     {
         /// <summary>
@@ -25,7 +39,7 @@ namespace DinoDiner.Menu.Sides
         public uint Calories { get; set; }
 
 
-        private List<string> ingredients = new List<string>();
+        private readonly List<string> ingredients = new List<string>();
         /// <summary>
         /// Gets the ingredients list
         /// </summary>

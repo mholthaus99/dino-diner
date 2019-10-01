@@ -4,9 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Tyrannotea drink class
+    /// </summary>
     public class Tyrannotea : Drink
     {
         private Size size = Size.Small;
+
+        /// <summary>
+        /// gets/sets size of drink
+        /// </summary>
         public override Size Size
         {
             get
@@ -36,6 +43,10 @@ namespace DinoDiner.Menu.Drinks
         }
 
         private bool sweet = false;
+
+        /// <summary>
+        /// gets/sets drink sweet property
+        /// </summary>
         public bool Sweet
         {
             get
@@ -62,6 +73,9 @@ namespace DinoDiner.Menu.Drinks
         }
         private bool lemon = false;
 
+        /// <summary>
+        /// gets Lemon property
+        /// </summary>
         public bool Lemon
         {
             get
@@ -70,6 +84,10 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+
+        /// <summary>
+        /// Tyrannotea constructor
+        /// </summary>
         public Tyrannotea() 
         {
             Price = 0.99;
@@ -79,6 +97,10 @@ namespace DinoDiner.Menu.Drinks
             Ingredients.Add("Tea");
         }
 
+
+        /// <summary>
+        /// Adds Lemon
+        /// </summary>
         public void AddLemon()
         {
             Ingredients.Add("Lemon");

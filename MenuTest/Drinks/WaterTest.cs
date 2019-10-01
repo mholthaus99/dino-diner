@@ -71,7 +71,7 @@ namespace MenuTest.Drinks
         {
             Water s = new Water();
             Assert.Contains<string>("Water", s.Ingredients);
-            Assert.Equal<int>(1, s.Ingredients.Count);
+            Assert.Single(s.Ingredients);
         }
 
 

@@ -4,10 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// MexxorellaSticks side class
+    /// </summary>
     public class MezzorellaSticks : Side
     {
 
         private Size size = Size.Small;
+        /// <summary>
+        /// gets/sets the side size
+        /// </summary>
         public override Size Size
         {
             get
@@ -35,12 +41,14 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// MexxorellaSticks constructor
+        /// </summary>
         public MezzorellaSticks() 
         {
             Calories = 540;
             Price = 0.99;
            
-            //Ingredients = new List<string>();
             Ingredients.Add("Cheese Product");
             Ingredients.Add("Breading");
             Ingredients.Add("Vegetable Oil");

@@ -4,14 +4,51 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Flavors of Sodasaurus drink
+    /// </summary>
     public enum SodasaurusFlavor
     {
-        Cola, Orange, Vanilla, Chocolate, RootBeer, Cherry, Lime
+        /// <summary>
+        /// Cola
+        /// </summary>
+        Cola, 
+        /// <summary>
+        /// Orange
+        /// </summary>
+        Orange, 
+        /// <summary>
+        /// Vanilla
+        /// </summary>
+        Vanilla, 
+        /// <summary>
+        /// Chocolate
+        /// </summary>
+        Chocolate, 
+        /// <summary>
+        /// Root Beer
+        /// </summary>
+        RootBeer, 
+        /// <summary>
+        /// Cherry
+        /// </summary>
+        Cherry, 
+        /// <summary>
+        /// Lime
+        /// </summary>
+        Lime
     }
+
+    /// <summary>
+    /// Sodasauras class
+    /// </summary>
     public class Sodasaurus : Drink
     {
         private Size size = Size.Small;
-
+        
+        /// <summary>
+        /// gets/sets size of drink
+        /// </summary>
         public override Size Size
         {
             get
@@ -39,8 +76,14 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// The drink flavor
+        /// </summary>
         public SodasaurusFlavor Flavor;
 
+        /// <summary>
+        /// Sodasaurus constructor
+        /// </summary>
         public Sodasaurus() 
         {
             Price = 1.50;

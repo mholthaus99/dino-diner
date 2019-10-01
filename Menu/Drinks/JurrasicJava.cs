@@ -4,9 +4,15 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// JurrasicJava class
+    /// </summary>
     public class JurrasicJava : Drink
     {
         private Size size = Size.Small;
+        /// <summary>
+        /// gets/sets size of drink
+        /// </summary>
         public override Size Size
         {
             get
@@ -34,7 +40,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
-        
+        /// <summary>
+        /// JurrasicJava constructor
+        /// </summary>
         public JurrasicJava()
         {
             Price = 0.59;
@@ -49,8 +57,15 @@ namespace DinoDiner.Menu.Drinks
        
 
         private bool roomForCream = false;
-        //public bool Decaf { get; set; } = true;
+
+        /// <summary>
+        /// gets/sets decaf
+        /// </summary>
+        public bool Decaf { get; set; } = true;
         
+        /// <summary>
+        /// gets RoomForCream property
+        /// </summary>
         public bool RoomForCream
         {
             get
@@ -59,11 +74,17 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Leaves room for cream
+        /// </summary>
         public void LeaveRoomForCream()
         {
             roomForCream = true;
         }
 
+        /// <summary>
+        /// Adds ice to drink
+        /// </summary>
         public void AddIce()
         {
             Ice = true;

@@ -4,11 +4,19 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Water drink class
+    /// </summary>
     public class Water : Drink
     {
-        
+        /// <summary>
+        /// gets/sets size of the drink
+        /// </summary>
         public override Size Size { get; set; }
 
+        /// <summary>
+        /// Water constructor
+        /// </summary>
         public Water()
         {
             
@@ -19,6 +27,10 @@ namespace DinoDiner.Menu.Drinks
         }
 
         private bool lemon = false;
+
+        /// <summary>
+        /// gets Lemon property.
+        /// </summary>
         public bool Lemon
         {
             get
@@ -27,6 +39,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// adds Lemon
+        /// </summary>
         public void AddLemon()
         {
             Ingredients.Add("Lemon");

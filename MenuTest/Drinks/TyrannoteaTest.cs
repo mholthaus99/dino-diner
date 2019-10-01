@@ -73,9 +73,11 @@ namespace MenuTest.Drinks
         [Fact]
         public void SweetPropertyMakesCorrectCalories()
         {
-            Tyrannotea s = new Tyrannotea();
-            s.Sweet = true;
-            s.Size = Size.Small;
+            Tyrannotea s = new Tyrannotea
+            {
+                Sweet = true,
+                Size = Size.Small
+            };
             Assert.Equal<uint>(16, s.Calories);
             s.Size = Size.Medium;
             Assert.Equal<uint>(32, s.Calories);
@@ -88,8 +90,10 @@ namespace MenuTest.Drinks
             [Fact]
             public void SweetPropertyFalseMakesCorrectCalories()
         {
-            Tyrannotea s = new Tyrannotea();
-            s.Sweet = true;
+            Tyrannotea s = new Tyrannotea
+            {
+                Sweet = true
+            };
             s.Sweet = false;
             s.Size = Size.Small;
             Assert.Equal<uint>(8, s.Calories);
@@ -120,8 +124,10 @@ namespace MenuTest.Drinks
         [Fact]
         public void MakingSweetShouldAddCaneSugarIngredient()
         {
-            Tyrannotea s = new Tyrannotea();
-            s.Sweet = true;
+            Tyrannotea s = new Tyrannotea
+            {
+                Sweet = true
+            };
             Assert.Contains<string>("Cane Sugar", s.Ingredients);
         }
 
