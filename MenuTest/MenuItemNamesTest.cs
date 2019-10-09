@@ -72,8 +72,10 @@ namespace MenuTest
         [InlineData(Size.Large)]
         public void FryceritopsToStringShouldGiveNameForSize(Size size)
         {
-            Fryceritops ft = new Fryceritops();
-            ft.Size = size;
+            Fryceritops ft = new Fryceritops
+            {
+                Size = size
+            };
             Assert.Equal($"{size} Fryceritops", ft.ToString());
         }
 
@@ -83,8 +85,10 @@ namespace MenuTest
         [InlineData(Size.Large)]
         public void MeteorMacAndCheeseToStringShouldGiveNameForSize(Size size)
         {
-            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
-            mmc.Size = size;
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese
+            {
+                Size = size
+            };
             Assert.Equal($"{size} Meteor Mac and Cheese", mmc.ToString());
         }
 
@@ -94,8 +98,10 @@ namespace MenuTest
         [InlineData(Size.Large)]
         public void MezzorellaSticksToStringShouldGiveNameForSize(Size size)
         {
-            MezzorellaSticks ms = new MezzorellaSticks();
-            ms.Size = size;
+            MezzorellaSticks ms = new MezzorellaSticks
+            {
+                Size = size
+            };
             Assert.Equal($"{size} Mezzorella Sticks", ms.ToString());
         }
 
@@ -105,8 +111,10 @@ namespace MenuTest
         [InlineData(Size.Large)]
         public void ToStringShouldGiveNameForSize(Size size)
         {
-            Triceritots tt = new Triceritots();
-            tt.Size = size;
+            Triceritots tt = new Triceritots
+            {
+                Size = size
+            };
             Assert.Equal($"{size} Triceritots", tt.ToString());
         }
 
@@ -123,9 +131,11 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurassicJava java = new JurassicJava();
-            java.Size = size;
-            java.Decaf = decaf;
+            JurassicJava java = new JurassicJava
+            {
+                Size = size,
+                Decaf = decaf
+            };
             if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
             else Assert.Equal($"{size} Jurassic Java", java.ToString());
         }
@@ -155,9 +165,11 @@ namespace MenuTest
         [InlineData(Size.Large, SodasaurusFlavor.Vanilla)]
         public void SodaSaurusToStringShouldGiveNameForSizeAndFlavor(Size size, SodasaurusFlavor flavor)
         {
-            Sodasaurus soda = new Sodasaurus();
-            soda.Size = size;
-            soda.Flavor = flavor;
+            Sodasaurus soda = new Sodasaurus
+            {
+                Size = size,
+                Flavor = flavor
+            };
             Assert.Equal($"{size} {flavor} Sodasaurus", soda.ToString());
         }
 
@@ -170,9 +182,11 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void TyrannoTeaToStringShouldGiveNameForSizeAndSweetness(Size size, bool sweet)
         {
-            Tyrannotea tea = new Tyrannotea();
-            tea.Size = size;
-            tea.Sweet = sweet;
+            Tyrannotea tea = new Tyrannotea
+            {
+                Size = size,
+                Sweet = sweet
+            };
             if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.ToString());
             else Assert.Equal($"{size} Tyrannotea", tea.ToString());
         }
@@ -183,8 +197,10 @@ namespace MenuTest
         [InlineData(Size.Large)]
         public void WaterToStringShouldGiveNameForSize(Size size)
         {
-            Water water = new Water();
-            water.Size = size;
+            Water water = new Water
+            {
+                Size = size
+            };
             Assert.Equal($"{size} Water", water.ToString());
         }
 

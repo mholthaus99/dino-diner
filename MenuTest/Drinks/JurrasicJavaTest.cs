@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 using Xunit;
 
 namespace MenuTest.Drinks
@@ -12,35 +12,35 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             Assert.Equal(0.59, s.Price, 2);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             Assert.Equal<uint>(2, s.Calories);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultIce()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             Assert.False(s.Ice);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             Assert.Equal<Size>(Size.Small, s.Size);
         }
 
         [Fact]
         public void ShouldHaveCorrectDefaultSpaceForCream()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             Assert.False(s.RoomForCream);
         }
 
@@ -50,7 +50,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void InvokingAddICeResultsInIcePropertyBeingTrue()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             s.AddIce();
             Assert.True(s.Ice);
         }
@@ -59,7 +59,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void InvokingLeaveRoomForCreamnPropertyMakesTrue()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             s.LeaveRoomForCream();
             Assert.True(s.RoomForCream);
         }
@@ -69,7 +69,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectDefaultIngedients()
         {
-            JurrasicJava s = new JurrasicJava();
+            JurassicJava s = new JurassicJava();
             Assert.Contains<string>("Water", s.Ingredients);
             Assert.Contains<string>("Coffee", s.Ingredients);
             Assert.Equal<int>(2, s.Ingredients.Count);
@@ -81,7 +81,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldUseCorrectPriceForMedium()
         {
-            JurrasicJava s = new JurrasicJava
+            JurassicJava s = new JurassicJava
             {
                 Size = Size.Medium
             };
@@ -91,7 +91,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldUseCorrectCaloriesForMedium()
         {
-            JurrasicJava s = new JurrasicJava
+            JurassicJava s = new JurassicJava
             {
                 Size = Size.Medium
             };
@@ -101,7 +101,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldBeAbleToSetSizeToMedium()
         {
-            JurrasicJava s = new JurrasicJava
+            JurassicJava s = new JurassicJava
             {
                 Size = Size.Medium
             };
@@ -111,7 +111,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldUseCorrectPriceForLarge()
         {
-            JurrasicJava s = new JurrasicJava
+            JurassicJava s = new JurassicJava
             {
                 Size = Size.Large
             };
@@ -121,7 +121,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldUseCorrectCaloriesForLarge()
         {
-            JurrasicJava s = new JurrasicJava
+            JurassicJava s = new JurassicJava
             {
                 Size = Size.Large
             };
@@ -131,7 +131,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldBeAbleToSetSizeToLarge()
         {
-            JurrasicJava s = new JurrasicJava
+            JurassicJava s = new JurassicJava
             {
                 Size = Size.Large
             };

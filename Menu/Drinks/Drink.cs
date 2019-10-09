@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
+
+    /*
     /// <summary>
     /// Drink size
     /// </summary>
@@ -22,6 +24,7 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         Large
     }
+    */
     /// <summary>
     /// Base class for Drinks
     /// </summary>

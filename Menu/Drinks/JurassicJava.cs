@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// JurrasicJava class
+    /// JurassicJava
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         private Size size = Size.Small;
         /// <summary>
@@ -43,7 +44,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// JurrasicJava constructor
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             Price = 0.59;
             Calories = 2;
