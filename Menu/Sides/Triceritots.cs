@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Triceritots side class
     /// </summary>
-    public class Triceritots : Side
+    public class Triceritots : Side, IMenuItem
     {
         private Size size = Size.Small;
 
@@ -54,6 +54,15 @@ namespace DinoDiner.Menu
             Ingredients.Add("Salt");
             Ingredients.Add("Vegetable Oil");
 
+        }
+
+        /// <summary>
+        ///Side name as string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.SizeToString() + " " + "Triceritots";
         }
     }
 }

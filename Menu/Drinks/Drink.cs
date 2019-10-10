@@ -54,7 +54,25 @@ namespace DinoDiner.Menu
 
         }
 
-      
+        /// <summary>
+        /// Size as string
+        /// </summary>
+        /// <returns></returns>
+        public string SizeToString()
+        {
+            switch (this.Size)
+            {
+                case Size.Small:
+                    return "Small";
+                case Size.Medium:
+                    return "Medium";
+                case Size.Large:
+                    return "Large";
+                default:
+                    return "";
+            }
+        }
+
         /// <summary>
         /// Gets or sets the size
         /// </summary>

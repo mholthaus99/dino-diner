@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// MeteorMacAndCheese class
     /// </summary>
-    public class MeteorMacAndCheese : Side
+    public class MeteorMacAndCheese : Side, IMenuItem
     {
         private Size size = Size.Small;
 
@@ -53,6 +53,15 @@ namespace DinoDiner.Menu
             Ingredients.Add("Cheese Product");
             Ingredients.Add("Pork Sausage");
 
+        }
+
+        /// <summary>
+        /// Side name as string.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.SizeToString() + " " + "Meteor Mac and Cheese";
         }
     }
 }

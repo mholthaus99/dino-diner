@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Tyrannotea drink class
     /// </summary>
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, IMenuItem
     {
         private Size size = Size.Small;
 
@@ -105,6 +105,23 @@ namespace DinoDiner.Menu
         {
             Ingredients.Add("Lemon");
             this.lemon = true;
+        }
+
+         //   if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.ToString());
+         //   else Assert.Equal($"{size} Tyrannotea", tea.ToString());
+
+        /// <summary>
+        /// Drink name as string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string sweetString = " ";
+            if (this.sweet)
+            {
+                sweetString = " Sweet ";
+            }
+            return base.SizeToString() + sweetString + "Tyrannotea";
         }
     }
 }

@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// PterodactylWings entree class
     /// </summary>
-    public class PterodactylWings :Entree
+    public class PterodactylWings :Entree, IMenuItem
     {
         /// <summary>
         /// PterodatylWings constructor
@@ -16,9 +16,18 @@ namespace DinoDiner.Menu
         {
             this.Price = 7.21;
             this.Calories = 318;
-           // Ingredients = new List<string>();
+      
             Ingredients.Add("Chicken");
             Ingredients.Add("Wing Sauce");
+        }
+
+        /// <summary>
+        /// Entree name as string.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
         }
     }
 }

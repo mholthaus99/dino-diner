@@ -42,7 +42,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Sodasauras class
     /// </summary>
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, IMenuItem
     {
         private Size size = Size.Small;
         
@@ -92,6 +92,47 @@ namespace DinoDiner.Menu
             Ingredients.Add("Water");
             Ingredients.Add("Natural Flavors");
             Ingredients.Add("Cane Sugar");
+        }
+
+        /// <summary>
+        /// Drink name as string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string flavorName = "";
+
+            switch (this.Flavor)
+            {
+                case SodasaurusFlavor.Cherry:
+                    flavorName = "Cherry";
+                    break;
+                case SodasaurusFlavor.Chocolate:
+                    flavorName = "Chocolate";
+                    break;
+                case SodasaurusFlavor.Cola:
+                    flavorName = "Cola";
+                    break;
+                case SodasaurusFlavor.Lime:
+                    flavorName = "Lime";
+                    break;
+                case SodasaurusFlavor.Orange:
+                    flavorName = "Orange";
+                    break;
+                case SodasaurusFlavor.RootBeer:
+                    flavorName = "RootBeer";
+                    break;
+                case SodasaurusFlavor.Vanilla:
+                    flavorName = "Vanilla";
+                    break;
+                default:
+                    flavorName = "";
+                    break;
+            }
+
+           // Assert.Equal($"{size} {flavor} Sodasaurus", soda.ToString());
+
+            return base.SizeToString() + " " + flavorName + " "+ "Sodasaurus";
         }
 
     }

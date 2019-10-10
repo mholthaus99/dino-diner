@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// MexxorellaSticks side class
     /// </summary>
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, IMenuItem
     {
 
         private Size size = Size.Small;
@@ -53,6 +53,15 @@ namespace DinoDiner.Menu
             Ingredients.Add("Breading");
             Ingredients.Add("Vegetable Oil");
 
+        }
+
+        /// <summary>
+        /// Side name as string.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.SizeToString() + " " + "Mezzorella Sticks";
         }
     }
 }

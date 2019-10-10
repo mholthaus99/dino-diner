@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// SteakosaurusBurger entree class
     /// </summary>
-    public class SteakosaurusBurger : Entree
+    public class SteakosaurusBurger : Entree, IMenuItem
     {
 
         private bool bun = true;
@@ -62,6 +62,15 @@ namespace DinoDiner.Menu
         {
             Ingredients.Remove("Mustard");
             this.mustard = true;
+        }
+
+        /// <summary>
+        /// Entree name as string.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
         }
     }
 }

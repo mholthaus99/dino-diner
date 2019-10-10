@@ -22,7 +22,9 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Ingredients contained in menu item
         /// </summary>
-         List<string> Ingredients { get; }
-
+         List<string> Ingredients
+        {
+            get;
+        }
     }
 }

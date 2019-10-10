@@ -4,6 +4,28 @@
         <name>Menu</name>
     </assembly>
     <members>
+        <member name="T:DinoDiner.Menu.CretaceousCombo">
+            <summary>
+            Represents a combo
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Entree">
+            <summary>
+            Entree of the combo
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.CretaceousCombo.#ctor(DinoDiner.Menu.Entree)">
+            <summary>
+            init with entree
+            </summary>
+            <param name="_entree"></param>
+        </member>
+        <member name="M:DinoDiner.Menu.CretaceousCombo.ToString">
+            <summary>
+            Combo name as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.Drink">
             <summary>
             Base class for Drinks
@@ -24,6 +46,12 @@
             Gets the ingredients list
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Drink.SizeToString">
+            <summary>
+            Size as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:DinoDiner.Menu.Drink.Size">
             <summary>
             Gets or sets the size
@@ -39,40 +67,47 @@
             Holds ice in drink
             </summary>
         </member>
-        <member name="T:DinoDiner.Menu.JurrasicJava">
+        <member name="T:DinoDiner.Menu.JurassicJava">
             <summary>
             JurrasicJava class
+            JurassicJava
             </summary>
         </member>
-        <member name="P:DinoDiner.Menu.JurrasicJava.Size">
+        <member name="P:DinoDiner.Menu.JurassicJava.Size">
             <summary>
             gets/sets size of drink
             </summary>
         </member>
-        <member name="M:DinoDiner.Menu.JurrasicJava.#ctor">
+        <member name="M:DinoDiner.Menu.JurassicJava.#ctor">
             <summary>
             JurrasicJava constructor
             </summary>
         </member>
-        <member name="P:DinoDiner.Menu.JurrasicJava.Decaf">
+        <member name="P:DinoDiner.Menu.JurassicJava.Decaf">
             <summary>
             gets/sets decaf
             </summary>
         </member>
-        <member name="P:DinoDiner.Menu.JurrasicJava.RoomForCream">
+        <member name="P:DinoDiner.Menu.JurassicJava.RoomForCream">
             <summary>
             gets RoomForCream property
             </summary>
         </member>
-        <member name="M:DinoDiner.Menu.JurrasicJava.LeaveRoomForCream">
+        <member name="M:DinoDiner.Menu.JurassicJava.LeaveRoomForCream">
             <summary>
             Leaves room for cream
             </summary>
         </member>
-        <member name="M:DinoDiner.Menu.JurrasicJava.AddIce">
+        <member name="M:DinoDiner.Menu.JurassicJava.AddIce">
             <summary>
             Adds ice to drink
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.JurassicJava.ToString">
+            <summary>
+            Drink name as string
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:DinoDiner.Menu.SodasaurusFlavor">
             <summary>
@@ -134,6 +169,12 @@
             Sodasaurus constructor
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Sodasaurus.ToString">
+            <summary>
+            Drink name as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.Tyrannotea">
             <summary>
             Tyrannotea drink class
@@ -164,6 +205,12 @@
             Adds Lemon
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Tyrannotea.ToString">
+            <summary>
+            Drink name as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.Water">
             <summary>
             Water drink class
@@ -188,6 +235,12 @@
             <summary>
             adds Lemon
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Water.ToString">
+            <summary>
+            Drink name as string
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:DinoDiner.Menu.Brontowurst">
             <summary>
@@ -214,6 +267,12 @@
             Hold onion, remove it from ingredients
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Brontowurst.ToString">
+            <summary>
+            Entree name as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.DinoNuggets">
             <summary>
             DinoNuggets entree class
@@ -234,6 +293,12 @@
             DinoNuggets constructor
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.DinoNuggets.ToString">
+            <summary>
+            Entree name as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.Entree">
             <summary>
             Entree base class
@@ -253,6 +318,7 @@
             <summary>
             Gets the ingredients list
             </summary>
+            
         </member>
         <member name="T:DinoDiner.Menu.PrehistoricPBJ">
             <summary>
@@ -274,6 +340,12 @@
             Hold jelly, remove if from ingredients
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.PrehistoricPBJ.ToString">
+            <summary>
+            Entree name as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.PterodactylWings">
             <summary>
             PterodactylWings entree class
@@ -283,6 +355,12 @@
             <summary>
             PterodatylWings constructor
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.PterodactylWings.ToString">
+            <summary>
+            Entree name as string.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:DinoDiner.Menu.SteakosaurusBurger">
             <summary>
@@ -313,6 +391,12 @@
             <summary>
             Hold mustard
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.SteakosaurusBurger.ToString">
+            <summary>
+            Entree name as string.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:DinoDiner.Menu.TRexKingBurger">
             <summary>
@@ -364,6 +448,12 @@
             Hold mayo
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.TRexKingBurger.ToString">
+            <summary>
+            Entree name as string.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.VelociWrap">
             <summary>
             VelociWrap entree class
@@ -388,6 +478,12 @@
             <summary>
             Hold cheese
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.VelociWrap.ToString">
+            <summary>
+            Entree name as string
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:DinoDiner.Menu.IMenuItem">
             <summary>
@@ -424,6 +520,12 @@
             Fryceritops constructor
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Fryceritops.ToString">
+            <summary>
+            Side name as string.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.MeteorMacAndCheese">
             <summary>
             MeteorMacAndCheese class
@@ -439,6 +541,12 @@
             MeteorMacAndCheese constructor
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.MeteorMacAndCheese.ToString">
+            <summary>
+            Side name as string.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.MezzorellaSticks">
             <summary>
             MexxorellaSticks side class
@@ -453,6 +561,12 @@
             <summary>
             MexxorellaSticks constructor
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.MezzorellaSticks.ToString">
+            <summary>
+            Side name as string.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:DinoDiner.Menu.Size">
             <summary>
@@ -499,6 +613,12 @@
             Gets or sets the size
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Side.SizeToString">
+            <summary>
+            Return size as string
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:DinoDiner.Menu.Triceritots">
             <summary>
             Triceritots side class
@@ -513,6 +633,12 @@
             <summary>
             Triceritots constructor
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Triceritots.ToString">
+             <summary>
+            Side name as string
+             </summary>
+             <returns></returns>
         </member>
     </members>
 </doc>

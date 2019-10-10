@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// DinoNuggets entree class
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IMenuItem
     { 
         /// <summary>
         /// gets/sets the nugget count
@@ -38,6 +38,15 @@ namespace DinoDiner.Menu
             {
                 Ingredients.Add("Chicken Nugget");
             }
+        }
+
+        /// <summary>
+        /// Entree name as string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
     }
 }

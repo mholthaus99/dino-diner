@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Water drink class
     /// </summary>
-    public class Water : Drink
+    public class Water : Drink, IMenuItem
     {
         /// <summary>
         /// gets/sets size of the drink
@@ -47,6 +47,14 @@ namespace DinoDiner.Menu
             Ingredients.Add("Lemon");
             lemon = true;
         }
-       
+
+        /// <summary>
+        /// Drink name as string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.SizeToString() + " " + "Water";
+        }
     }
 }

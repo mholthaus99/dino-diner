@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Fryceritops side class
     /// </summary>
-    public class Fryceritops : Side
+    public class Fryceritops : Side, IMenuItem
     {
 
         private Size size = Size.Small;
@@ -56,6 +56,15 @@ namespace DinoDiner.Menu
             Ingredients.Add("Potato");
             Ingredients.Add("Vegetable Oil");
             Ingredients.Add("Salt");
+        }
+
+        /// <summary>
+        /// Side name as string.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.SizeToString() + " " + "Fryceritops";
         }
     }
 }

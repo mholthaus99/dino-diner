@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// JurrasicJava class
     /// JurassicJava
     /// </summary>
-    public class JurassicJava : Drink
+    public class JurassicJava : Drink, IMenuItem
     {
         private Size size = Size.Small;
         /// <summary>
@@ -89,6 +89,24 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+        }
+
+        /// <summary>
+        /// Drink name as string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string drinkName = "Jurassic Java";
+            
+            if (Decaf == true)
+            {
+                drinkName = "Decaf Jurassic Java";
+            }
+
+            //Decaf Jurassic Java
+
+            return base.SizeToString() + " " + drinkName;
         }
     }
 }
