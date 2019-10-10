@@ -18,7 +18,34 @@
             <summary>
             init with entree
             </summary>
-            <param name="_entree"></param>
+            <param name="entree"></param>
+        </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Price">
+            <summary>
+            Combo price
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Calories">
+            <summary>
+            Combo total calories
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Ingredients">
+            <summary>
+            All ingredients in combo
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.CretaceousCombo.AddSide(DinoDiner.Menu.Side)">
+            <summary>
+            Add side to combo
+            </summary>
+            <param name="side"></param>
+        </member>
+        <member name="M:DinoDiner.Menu.CretaceousCombo.AddDrink(DinoDiner.Menu.Drink)">
+            <summary>
+            Add drink to side;
+            </summary>
+            <param name="drink"></param>
         </member>
         <member name="M:DinoDiner.Menu.CretaceousCombo.ToString">
             <summary>

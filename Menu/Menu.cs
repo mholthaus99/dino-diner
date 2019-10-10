@@ -38,7 +38,14 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return base.ToString();
+            StringBuilder sb = new StringBuilder();
+
+            foreach(IMenuItem item in AvailableMenuItems)
+            {
+                sb.Append(item.ToString());
+                sb.Append("\n");
+            }
+            return sb.ToString();
         }
     }
 }

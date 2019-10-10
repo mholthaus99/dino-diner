@@ -100,7 +100,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            string flavorName = "";
+            string flavorName; ;
 
             switch (this.Flavor)
             {
