@@ -38,15 +38,19 @@ namespace DinoDiner.Menu
         /// </summary>
         public uint Calories { get; set; }
 
+        /// <summary>
+        /// ingredients accessible by derived clases
+        /// </summary>
+        protected readonly List<string> ingredients = new List<string>();
 
-        private readonly List<string> ingredients = new List<string>();
+
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
         public List<string> Ingredients {
             get
             {
-                return this.ingredients;
+                return new List<string>(this.ingredients);
             }
                 
                 }

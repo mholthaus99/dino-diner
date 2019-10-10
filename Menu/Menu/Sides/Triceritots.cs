@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// Fryceritops side class
+    /// Triceritots side class
     /// </summary>
-    public class Fryceritops : Side, IMenuItem
+    public class Triceritots : Side, IMenuItem
     {
-
         private Size size = Size.Small;
-        
+
         /// <summary>
         /// gets/sets the side size
         /// </summary>
@@ -24,47 +22,47 @@ namespace DinoDiner.Menu
             }
             set
             {
-                this.size = value;
+                size = value;
                 switch (value)
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 222;
+                        Calories = 352;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 365;
+                        Calories = 410;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 480;
+                        Calories = 590;
                         break;
                 }
             }
         }
 
+
         /// <summary>
-        /// Fryceritops constructor
+        /// Triceritots constructor
         /// </summary>
-        public Fryceritops()
+        public Triceritots() 
         {
-            
-            Calories = 222;
+            Calories = 352;
             Price = 0.99;
-         
-           
-            Ingredients.Add("Potato");
-            Ingredients.Add("Vegetable Oil");
-            Ingredients.Add("Salt");
+
+            ingredients.Add("Potato");
+            ingredients.Add("Salt");
+            ingredients.Add("Vegetable Oil");
+
         }
 
         /// <summary>
-        /// Side name as string.
+        ///Side name as string
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return base.SizeToString() + " " + "Fryceritops";
+            return base.SizeToString() + " " + "Triceritots";
         }
     }
 }

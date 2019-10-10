@@ -5,12 +5,12 @@ using System.Text;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// MexxorellaSticks side class
+    /// MeteorMacAndCheese class
     /// </summary>
-    public class MezzorellaSticks : Side, IMenuItem
+    public class MeteorMacAndCheese : Side, IMenuItem
     {
-
         private Size size = Size.Small;
+
         /// <summary>
         /// gets/sets the side size
         /// </summary>
@@ -27,31 +27,31 @@ namespace DinoDiner.Menu
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 540;
+                        Calories = 420;  
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 610;
+                        Calories = 490;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 720;
+                        Calories = 520;
                         break;
                 }
             }
         }
 
         /// <summary>
-        /// MexxorellaSticks constructor
+        /// MeteorMacAndCheese constructor
         /// </summary>
-        public MezzorellaSticks() 
+        public MeteorMacAndCheese() 
         {
-            Calories = 540;
+            Calories = 420;
             Price = 0.99;
-           
-            Ingredients.Add("Cheese Product");
-            Ingredients.Add("Breading");
-            Ingredients.Add("Vegetable Oil");
+
+            ingredients.Add("Macaroni Noodles");
+            ingredients.Add("Cheese Product");
+            ingredients.Add("Pork Sausage");
 
         }
 
@@ -61,7 +61,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return base.SizeToString() + " " + "Mezzorella Sticks";
+            return base.SizeToString() + " " + "Meteor Mac and Cheese";
         }
     }
 }

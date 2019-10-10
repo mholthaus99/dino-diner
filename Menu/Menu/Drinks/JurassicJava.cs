@@ -49,8 +49,8 @@ namespace DinoDiner.Menu
             Price = 0.59;
             Calories = 2;
 
-            Ingredients.Add("Water");
-            Ingredients.Add("Coffee");
+            ingredients.Add("Water");
+            ingredients.Add("Coffee");
 
             Ice = false;
 

@@ -22,8 +22,8 @@ namespace DinoDiner.Menu
             
             Calories = 0;
             Price = 0.10;
-         
-            Ingredients.Add("Water");
+
+            ingredients.Add("Water");
         }
 
         private bool lemon = false;
@@ -44,7 +44,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            Ingredients.Add("Lemon");
+            ingredients.Add("Lemon");
             lemon = true;
         }
 

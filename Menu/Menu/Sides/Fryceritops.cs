@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// MeteorMacAndCheese class
+    /// Fryceritops side class
     /// </summary>
-    public class MeteorMacAndCheese : Side, IMenuItem
+    public class Fryceritops : Side, IMenuItem
     {
-        private Size size = Size.Small;
 
+        private Size size = Size.Small;
+        
         /// <summary>
         /// gets/sets the side size
         /// </summary>
@@ -22,37 +24,38 @@ namespace DinoDiner.Menu
             }
             set
             {
-                size = value;
+                this.size = value;
                 switch (value)
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 420;  
+                        Calories = 222;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 490;
+                        Calories = 365;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 520;
+                        Calories = 480;
                         break;
                 }
             }
         }
 
         /// <summary>
-        /// MeteorMacAndCheese constructor
+        /// Fryceritops constructor
         /// </summary>
-        public MeteorMacAndCheese() 
+        public Fryceritops()
         {
-            Calories = 420;
+            
+            Calories = 222;
             Price = 0.99;
-        
-            Ingredients.Add("Macaroni Noodles");
-            Ingredients.Add("Cheese Product");
-            Ingredients.Add("Pork Sausage");
 
+
+            ingredients.Add("Potato");
+            ingredients.Add("Vegetable Oil");
+            ingredients.Add("Salt");
         }
 
         /// <summary>
@@ -61,7 +64,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return base.SizeToString() + " " + "Meteor Mac and Cheese";
+            return base.SizeToString() + " " + "Fryceritops";
         }
     }
 }

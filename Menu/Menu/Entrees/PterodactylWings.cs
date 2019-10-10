@@ -17,8 +17,8 @@ namespace DinoDiner.Menu
             this.Price = 7.21;
             this.Calories = 318;
       
-            Ingredients.Add("Chicken");
-            Ingredients.Add("Wing Sauce");
+            ingredients.Add("Chicken");
+            ingredients.Add("Wing Sauce");
         }
 
         /// <summary>

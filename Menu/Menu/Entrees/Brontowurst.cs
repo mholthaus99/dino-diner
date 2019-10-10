@@ -20,10 +20,10 @@ namespace DinoDiner.Menu {
             Price = 5.36;
             Calories = 498;
 
-            Ingredients.Add("Brautwurst");
-            if (bun) Ingredients.Add("Whole Wheat Bun");
-            if (peppers) Ingredients.Add("Peppers");
-            if (onions) Ingredients.Add("Onion");
+            ingredients.Add("Brautwurst");
+            if (bun) ingredients.Add("Whole Wheat Bun");
+            if (peppers) ingredients.Add("Peppers");
+            if (onions) ingredients.Add("Onion");
            
         }
 
@@ -34,7 +34,7 @@ namespace DinoDiner.Menu {
         {
             if (bun)
             {
-                Ingredients.Remove("Whole Wheat Bun");
+                ingredients.Remove("Whole Wheat Bun");
             }
             this.bun = false;
         }
@@ -46,7 +46,7 @@ namespace DinoDiner.Menu {
         {
             if (peppers)
             {
-                Ingredients.Remove("Peppers");
+                ingredients.Remove("Peppers");
             }
             this.peppers = false;
         }
@@ -58,7 +58,7 @@ namespace DinoDiner.Menu {
         {
             if (onions)
             {
-                Ingredients.Remove("Onion");
+                ingredients.Remove("Onion");
             }
             this.onions = false;
         }

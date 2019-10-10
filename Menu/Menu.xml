@@ -68,6 +68,11 @@
             Gets and sets the calories
             </summary>
         </member>
+        <member name="F:DinoDiner.Menu.Drink.ingredients">
+            <summary>
+            ingrediants accessible from inherited class
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Drink.Ingredients">
             <summary>
             Gets the ingredients list
@@ -339,6 +344,11 @@
         <member name="P:DinoDiner.Menu.Entree.Calories">
             <summary>
             Gets and sets the calories
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Entree.ingredients">
+            <summary>
+            
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entree.Ingredients">
@@ -628,6 +638,11 @@
         <member name="P:DinoDiner.Menu.Side.Calories">
             <summary>
             Gets and sets the calories
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Side.ingredients">
+            <summary>
+            ingredients accessible by derived clases
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Side.Ingredients">

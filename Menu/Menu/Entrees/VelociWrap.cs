@@ -21,13 +21,13 @@ namespace DinoDiner.Menu
             Price = 6.86;
             Calories = 356;
 
-           // Ingredients = new List<string>();
-            Ingredients.Add("Flour Tortilla");
-            Ingredients.Add("Chicken Breast");
+            // Ingredients = new List<string>();
+            ingredients.Add("Flour Tortilla");
+            ingredients.Add("Chicken Breast");
 
-            if (dressing) Ingredients.Add("Ceasar Dressing");
-            if (lettuce) Ingredients.Add("Romaine Lettuce");
-            if (cheese) Ingredients.Add("Parmesan Cheese");
+            if (dressing) ingredients.Add("Ceasar Dressing");
+            if (lettuce) ingredients.Add("Romaine Lettuce");
+            if (cheese) ingredients.Add("Parmesan Cheese");
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldDressing()
         {
-            Ingredients.Remove("Ceasar Dressing");
+            ingredients.Remove("Ceasar Dressing");
             this.dressing = false;
         }
 
@@ -44,7 +44,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldLettuce()
         {
-            Ingredients.Remove("Romaine Lettuce");
+            ingredients.Remove("Romaine Lettuce");
             this.lettuce = false;
         }
 
@@ -53,7 +53,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldCheese()
         {
-            Ingredients.Remove("Parmesan Cheese");
+            ingredients.Remove("Parmesan Cheese");
             this.cheese = false;
         }
 

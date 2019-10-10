@@ -23,11 +23,11 @@ namespace DinoDiner.Menu
             Price = 5.15;
             Calories = 621;
             //Ingredients = new List<string>();
-            Ingredients.Add("Steakburger Pattie");
-            if (bun) Ingredients.Add("Whole Wheat Bun");
-            if (pickle) Ingredients.Add("Pickle");
-            if (ketchup) Ingredients.Add("Ketchup");
-            if (mustard) Ingredients.Add("Mustard");
+            ingredients.Add("Steakburger Pattie");
+            if (bun) ingredients.Add("Whole Wheat Bun");
+            if (pickle) ingredients.Add("Pickle");
+            if (ketchup) ingredients.Add("Ketchup");
+            if (mustard) ingredients.Add("Mustard");
 
         }
 
@@ -36,7 +36,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
-            Ingredients.Remove("Whole Wheat Bun");
+            ingredients.Remove("Whole Wheat Bun");
             this.bun = false;
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPickle()
         {
-            Ingredients.Remove("Pickle");
+            ingredients.Remove("Pickle");
             this.pickle = false;
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldKetchup()
         {
-            Ingredients.Remove("Ketchup");
+            ingredients.Remove("Ketchup");
             this.ketchup = false;
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMustard()
         {
-            Ingredients.Remove("Mustard");
+            ingredients.Remove("Mustard");
             this.mustard = true;
         }
 

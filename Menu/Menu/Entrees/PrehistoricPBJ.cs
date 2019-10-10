@@ -18,10 +18,10 @@ namespace DinoDiner.Menu
             Price = 6.52;
             Calories = 483;
 
-           // Ingredients = new List<string>();
-            Ingredients.Add("Bread");
-            if (peanutButter) Ingredients.Add("Peanut Butter");
-            if (jelly) Ingredients.Add("Jelly");
+            // Ingredients = new List<string>();
+            ingredients.Add("Bread");
+            if (peanutButter) ingredients.Add("Peanut Butter");
+            if (jelly) ingredients.Add("Jelly");
 
         }
 
@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPeanutButter()
         {
-                Ingredients.Remove("Peanut Butter");
+            ingredients.Remove("Peanut Butter");
             
             this.peanutButter = false;
         }
@@ -40,7 +40,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldJelly()
         {
-            Ingredients.Remove("Jelly");
+            ingredients.Remove("Jelly");
             this.jelly = false;
         }
 

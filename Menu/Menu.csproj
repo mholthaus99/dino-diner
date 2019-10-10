@@ -3,6 +3,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>DinoDiner.Menu</RootNamespace>
     <Platforms>AnyCPU;x64;x86</Platforms>

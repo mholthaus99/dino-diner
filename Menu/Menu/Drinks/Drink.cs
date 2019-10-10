@@ -40,8 +40,10 @@ namespace DinoDiner.Menu
         /// </summary>
         public uint Calories { get; set; }
 
-
-        private readonly List<string> ingredients = new List<string>();
+        /// <summary>
+        /// ingrediants accessible from inherited class
+        /// </summary>
+        protected readonly List<string> ingredients = new List<string>();
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
@@ -49,7 +51,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return this.ingredients;
+                return new List<string>(ingredients);
             }
 
         }

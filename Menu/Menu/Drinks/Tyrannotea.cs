@@ -59,14 +59,14 @@ namespace DinoDiner.Menu
                 if (value == true && this.sweet == false)
                 {
                     Calories *= 2;
-                    Ingredients.Add("Cane Sugar");
+                    ingredients.Add("Cane Sugar");
                     this.sweet = value;
                 }
                 //removing sweetener
                 if(value == false && this.sweet == true)
                 {
                     Calories /= 2;
-                    Ingredients.Remove("Cane Sugar");
+                    ingredients.Remove("Cane Sugar");
                     this.sweet = value;
                 }
             }
@@ -93,8 +93,8 @@ namespace DinoDiner.Menu
             Price = 0.99;
             Calories = 8;
 
-            Ingredients.Add("Water");
-            Ingredients.Add("Tea");
+            ingredients.Add("Water");
+            ingredients.Add("Tea");
         }
 
 
@@ -103,7 +103,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            Ingredients.Add("Lemon");
+            ingredients.Add("Lemon");
             this.lemon = true;
         }
 

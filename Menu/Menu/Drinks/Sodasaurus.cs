@@ -89,9 +89,9 @@ namespace DinoDiner.Menu
             Price = 1.50;
             Calories = 112;
 
-            Ingredients.Add("Water");
-            Ingredients.Add("Natural Flavors");
-            Ingredients.Add("Cane Sugar");
+            ingredients.Add("Water");
+            ingredients.Add("Natural Flavors");
+            ingredients.Add("Cane Sugar");
         }
 
         /// <summary>

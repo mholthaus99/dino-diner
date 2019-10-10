@@ -5,12 +5,12 @@ using System.Text;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// Triceritots side class
+    /// MexxorellaSticks side class
     /// </summary>
-    public class Triceritots : Side, IMenuItem
+    public class MezzorellaSticks : Side, IMenuItem
     {
-        private Size size = Size.Small;
 
+        private Size size = Size.Small;
         /// <summary>
         /// gets/sets the side size
         /// </summary>
@@ -27,42 +27,41 @@ namespace DinoDiner.Menu
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 352;
+                        Calories = 540;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 410;
+                        Calories = 610;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 590;
+                        Calories = 720;
                         break;
                 }
             }
         }
 
-
         /// <summary>
-        /// Triceritots constructor
+        /// MexxorellaSticks constructor
         /// </summary>
-        public Triceritots() 
+        public MezzorellaSticks() 
         {
-            Calories = 352;
+            Calories = 540;
             Price = 0.99;
-         
-            Ingredients.Add("Potato");
-            Ingredients.Add("Salt");
-            Ingredients.Add("Vegetable Oil");
+
+            ingredients.Add("Cheese Product");
+            ingredients.Add("Breading");
+            ingredients.Add("Vegetable Oil");
 
         }
 
         /// <summary>
-        ///Side name as string
+        /// Side name as string.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return base.SizeToString() + " " + "Triceritots";
+            return base.SizeToString() + " " + "Mezzorella Sticks";
         }
     }
 }
