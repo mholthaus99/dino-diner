@@ -11,3 +11,4 @@
         <Frame Source="MenuCategorySelection.xaml"></Frame>
     </DockPanel>
 </Window>
+ 
