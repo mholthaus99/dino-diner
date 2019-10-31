@@ -5,7 +5,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// PrehistoricPBJ entree class
     /// </summary>
-    public class PrehistoricPBJ : Entree, IMenuItem
+    public class PrehistoricPBJ : Entree, IMenuItem, IOrderItem
     {
         private bool peanutButter = true;
         private bool jelly = true;
@@ -31,6 +31,7 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             ingredients.Remove("Peanut Butter");
+            special.Add("Hold Peanut Butter");
             
             this.peanutButter = false;
         }
@@ -41,6 +42,7 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             ingredients.Remove("Jelly");
+            special.Add("Hold Jelly");
             this.jelly = false;
         }
 
@@ -52,5 +54,7 @@ namespace DinoDiner.Menu
         {
             return "Prehistoric PB&J";
         }
+
+      
     }
 }

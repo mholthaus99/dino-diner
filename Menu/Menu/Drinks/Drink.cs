@@ -1,34 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
 
-    /*
-    /// <summary>
-    /// Drink size
-    /// </summary>
-    public enum Size
-    {
-        /// <summary>
-        /// Small
-        /// </summary>
-        Small,
-        /// <summary>
-        /// Medium
-        /// </summary>
-        Medium,
-        /// <summary>
-        /// Large
-        /// </summary>
-        Large
-    }
-    */
     /// <summary>
     /// Base class for Drinks
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -55,6 +36,9 @@ namespace DinoDiner.Menu
             }
 
         }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Size as string
@@ -103,6 +87,36 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.ice = false;
+            special.Add("Hold Ice");
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Special"));
+        }
+
+        /// <summary>
+        /// Description of item
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// special for use by derived classes
+        /// </summary>
+        protected readonly List<string> special = new List<string>();
+
+
+        /// <summary>
+        /// Special property for use
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                return special.ToArray();
+            }
         }
 
     }

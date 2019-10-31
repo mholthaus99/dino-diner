@@ -1,18 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Water drink class
     /// </summary>
-    public class Water : Drink, IMenuItem
+    public class Water : Drink, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Size _size;
         /// <summary>
         /// gets/sets size of the drink
         /// </summary>
-        public override Size Size { get; set; }
+        public override Size Size
+        {
+            get
+            {
+                return _size;
+            }
+            set
+            {
+                _size = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Water constructor
@@ -45,7 +60,9 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             ingredients.Add("Lemon");
+            special.Add("Add Lemon");
             lemon = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -55,6 +72,11 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return base.SizeToString() + " " + "Water";
+        }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

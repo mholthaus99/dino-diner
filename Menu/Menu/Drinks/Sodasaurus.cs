@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -42,7 +43,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Sodasauras class
     /// </summary>
-    public class Sodasaurus : Drink, IMenuItem
+    public class Sodasaurus : Drink, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         private Size size = Size.Small;
         
@@ -73,13 +74,34 @@ namespace DinoDiner.Menu
                         Calories = 208;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
         /// <summary>
         /// The drink flavor
         /// </summary>
-        public SodasaurusFlavor Flavor;
+        private SodasaurusFlavor _flavor;
+
+        public SodasaurusFlavor Flavor
+        {
+            get
+            {
+                return _flavor;
+            }
+            set
+            {
+                _flavor = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Flavor");
+            }
+        }
+       
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Sodasaurus constructor
@@ -133,6 +155,11 @@ namespace DinoDiner.Menu
            // Assert.Equal($"{size} {flavor} Sodasaurus", soda.ToString());
 
             return base.SizeToString() + " " + flavorName + " "+ "Sodasaurus";
+        }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
     }

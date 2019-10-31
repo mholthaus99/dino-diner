@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Triceritots side class
     /// </summary>
-    public class Triceritots : Side, IMenuItem
+    public class Triceritots : Side, IMenuItem, IOrderItem
     {
         private Size size = Size.Small;
 

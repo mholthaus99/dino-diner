@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// PterodactylWings entree class
     /// </summary>
-    public class PterodactylWings :Entree, IMenuItem
+    public class PterodactylWings :Entree, IMenuItem, IOrderItem
     {
         /// <summary>
         /// PterodatylWings constructor

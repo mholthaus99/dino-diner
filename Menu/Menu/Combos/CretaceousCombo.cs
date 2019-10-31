@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Represents a combo
     /// </summary>
-    public class CretaceousCombo: IMenuItem
+    public class CretaceousCombo: IMenuItem, IOrderItem
     {
         /// <summary>
         /// Entree of the combo
@@ -89,6 +89,63 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return this.Entree.ToString() + " " + "Combo";
+        }
+
+        /*
+        The special instructions for the Entree
+The description of the side
+The special instructions for the Side
+The description of the drink
+The special instructions for the drink
+*/
+        
+
+        /// <summary>
+        /// Special
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+               List<string> special = new List<string>();
+                
+                //ENTREE INSTRUCTIONS
+                foreach(string s in this.Entree.Special)
+                {
+                    special.Add(s);
+                }
+
+                //SIDE DESCRIPTION
+                special.Add(this._side.Description);
+
+                //SIDE INSTRUCTIONS
+                foreach (string s in this._side.Special)
+                {
+                    special.Add(s);
+                }
+
+                //DRINK DESCRIPTION
+                special.Add(this._drink.Description);
+
+                //DRINK INSTRUCTIONS
+                foreach (string s in this._drink.Special)
+                {
+                    special.Add(s);
+                }
+
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Description of combo
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
         }
     }
 }

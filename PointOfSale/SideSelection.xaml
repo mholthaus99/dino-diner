@@ -13,7 +13,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <WrapPanel Grid.Row="0">
+        <WrapPanel Name="WrapPanel" Grid.Row="0">
             <WrapPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Width" Value="200"></Setter>
@@ -25,10 +25,10 @@
             <Button>Meteor Mac &amp; Cheese</Button>
             <Button>Mozzerella Sticks</Button>
         </WrapPanel>
-        <StackPanel Grid.Row="1">
-        <RadioButton>Small</RadioButton>
-        <RadioButton>Medium</RadioButton>
-        <RadioButton>Large</RadioButton>
+        <StackPanel Name="SizeStackPanel" Grid.Row="1">
+        <RadioButton Click="SizeClicked">Small</RadioButton>
+        <RadioButton Click="SizeClicked">Medium</RadioButton>
+        <RadioButton Click="SizeClicked">Large</RadioButton>
         </StackPanel>
     </Grid>
 </Page>

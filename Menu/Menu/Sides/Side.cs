@@ -79,6 +79,24 @@ namespace DinoDiner.Menu
             }
         }
 
+  
+        /// <summary>
+        /// Description
+        /// </summary>
+       public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+
+
+        /// <summary>
+        /// Side special
+        /// </summary>
+        public string[] Special => new string[0];
 
     }
 }

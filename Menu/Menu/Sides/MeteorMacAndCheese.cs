@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// MeteorMacAndCheese class
     /// </summary>
-    public class MeteorMacAndCheese : Side, IMenuItem
+    public class MeteorMacAndCheese : Side, IMenuItem, IOrderItem
     {
         private Size size = Size.Small;
 

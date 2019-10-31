@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// DinoNuggets entree class
     /// </summary>
-    public class DinoNuggets : Entree, IMenuItem
+    public class DinoNuggets : Entree, IMenuItem, IOrderItem
     { 
         /// <summary>
         /// gets/sets the nugget count
@@ -23,6 +23,15 @@ namespace DinoDiner.Menu
             Calories += 59;
             Price += 0.25;
             ingredients.Add("Chicken Nugget");
+
+            if(NuggetCount > 6)
+            {
+                if (NuggetCount > 7)
+                {
+                    special.Remove((NuggetCount - 1) + " Extra Nuggets");
+                }
+                special.Add(NuggetCount + " Extra Nuggets");
+            }
         }
 
         /// <summary>

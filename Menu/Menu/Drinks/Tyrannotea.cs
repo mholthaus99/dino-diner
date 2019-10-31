@@ -1,15 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Tyrannotea drink class
     /// </summary>
-    public class Tyrannotea : Drink, IMenuItem
-    {
+    public class Tyrannotea : Drink, IMenuItem, IOrderItem, INotifyPropertyChanged { 
+
+        public event PropertyChangedEventHandler PropertyChanged;
+    
         private Size size = Size.Small;
+
+        /// <summary>
+        /// Tyrannotea constructor
+        /// </summary>
+        public Tyrannotea()
+        {
+            Price = 0.99;
+            Calories = 8;
+
+            ingredients.Add("Water");
+            ingredients.Add("Tea");
+        }
 
         /// <summary>
         /// gets/sets size of drink
@@ -39,6 +54,11 @@ namespace DinoDiner.Menu
                         break;
                 }
                 if (sweet) { Calories *= 2; }
+
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -69,6 +89,9 @@ namespace DinoDiner.Menu
                     ingredients.Remove("Cane Sugar");
                     this.sweet = value;
                 }
+
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Calories");
             }
         }
         private bool lemon = false;
@@ -85,17 +108,7 @@ namespace DinoDiner.Menu
         }
 
 
-        /// <summary>
-        /// Tyrannotea constructor
-        /// </summary>
-        public Tyrannotea() 
-        {
-            Price = 0.99;
-            Calories = 8;
-
-            ingredients.Add("Water");
-            ingredients.Add("Tea");
-        }
+     
 
 
         /// <summary>
@@ -103,8 +116,10 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            ingredients.Add("Lemon");
             this.lemon = true;
+            ingredients.Add("Lemon");
+            special.Add("Add Lemon");
+            NotifyOfPropertyChanged("Special");
         }
 
          //   if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.ToString());
@@ -123,5 +138,11 @@ namespace DinoDiner.Menu
             }
             return base.SizeToString() + sweetString + "Tyrannotea";
         }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }

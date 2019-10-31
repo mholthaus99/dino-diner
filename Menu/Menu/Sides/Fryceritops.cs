@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Fryceritops side class
     /// </summary>
-    public class Fryceritops : Side, IMenuItem
+    public class Fryceritops : Side, IMenuItem, IOrderItem
     {
 
         private Size size = Size.Small;

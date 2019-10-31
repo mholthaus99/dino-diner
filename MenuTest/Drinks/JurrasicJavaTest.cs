@@ -42,6 +42,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava s = new JurassicJava();
             Assert.False(s.RoomForCream);
+         
         }
 
        
@@ -53,6 +54,7 @@ namespace MenuTest.Drinks
             JurassicJava s = new JurassicJava();
             s.AddIce();
             Assert.True(s.Ice);
+            Assert.Contains<string>("Add Ice", s.Special);
         }
 
         //4
@@ -62,6 +64,7 @@ namespace MenuTest.Drinks
             JurassicJava s = new JurassicJava();
             s.LeaveRoomForCream();
             Assert.True(s.RoomForCream);
+            Assert.Contains<string>("Leave Room For Cream", s.Special);
         }
 
       

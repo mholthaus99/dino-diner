@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// SteakosaurusBurger entree class
     /// </summary>
-    public class SteakosaurusBurger : Entree, IMenuItem
+    public class SteakosaurusBurger : Entree, IMenuItem, IOrderItem
     {
 
         private bool bun = true;
@@ -37,6 +37,7 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             ingredients.Remove("Whole Wheat Bun");
+            special.Add("Hold Bun");
             this.bun = false;
         }
         /// <summary>
@@ -45,6 +46,7 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             ingredients.Remove("Pickle");
+            special.Add("Hold Pickle");
             this.pickle = false;
         }
         /// <summary>
@@ -53,6 +55,7 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             ingredients.Remove("Ketchup");
+            special.Add("Hold Ketchup");
             this.ketchup = false;
         }
         /// <summary>
@@ -61,6 +64,7 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             ingredients.Remove("Mustard");
+            special.Add("Hold Mustard");
             this.mustard = true;
         }
 

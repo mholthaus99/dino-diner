@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// VelociWrap entree class
     /// </summary>
-    public class VelociWrap: Entree, IMenuItem
+    public class VelociWrap: Entree, IMenuItem, IOrderItem
     {
         private bool dressing = true;
         private bool lettuce = true;
@@ -36,6 +36,7 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             ingredients.Remove("Ceasar Dressing");
+            special.Add("Hold Dressing");
             this.dressing = false;
         }
 
@@ -45,6 +46,7 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             ingredients.Remove("Romaine Lettuce");
+            special.Add("Hold Lettuce");
             this.lettuce = false;
         }
 
@@ -54,6 +56,7 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             ingredients.Remove("Parmesan Cheese");
+            special.Add("Hold Cheese");
             this.cheese = false;
         }
 

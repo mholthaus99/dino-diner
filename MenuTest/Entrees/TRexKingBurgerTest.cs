@@ -49,6 +49,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldBun();
             Assert.DoesNotContain<string>("Whole Wheat Bun", trex.Ingredients);
+            Assert.Contains<string>("Hold Bun", trex.Special);
         }
 
         [Fact]
@@ -57,6 +58,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldLettuce();
             Assert.DoesNotContain<string>("Lettuce", trex.Ingredients);
+            Assert.Contains<string>("Hold Lettuce", trex.Special);
         }
 
         [Fact]
@@ -65,6 +67,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldTomato();
             Assert.DoesNotContain<string>("Tomato", trex.Ingredients);
+            Assert.Contains<string>("Hold Tomato", trex.Special);
         }
 
         [Fact]
@@ -73,6 +76,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldOnion();
             Assert.DoesNotContain<string>("Onion", trex.Ingredients);
+            Assert.Contains<string>("Hold Onion", trex.Special);
         }
 
         [Fact]
@@ -89,6 +93,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldKetchup();
             Assert.DoesNotContain<string>("Ketchup", trex.Ingredients);
+            Assert.Contains<string>("Hold Ketchup", trex.Special);
         }
 
         [Fact]
@@ -97,6 +102,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldMustard();
             Assert.DoesNotContain<string>("Mustard", trex.Ingredients);
+            Assert.Contains<string>("Hold Mustard", trex.Special);
         }
 
         [Fact]
@@ -105,6 +111,7 @@ namespace MenuTest.Entrees
             TRexKingBurger trex = new TRexKingBurger();
             trex.HoldMayo();
             Assert.DoesNotContain<string>("Mayo", trex.Ingredients);
+            Assert.Contains<string>("Hold Mayo", trex.Special);
         }
 
     }

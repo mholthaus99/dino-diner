@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// TRexKingBurger entree class
     /// </summary>
-    public class TRexKingBurger: Entree, IMenuItem
+    public class TRexKingBurger: Entree, IMenuItem, IOrderItem
     {
         private bool bun = true;
         private bool lettuce = true;
@@ -46,6 +46,7 @@ namespace DinoDiner.Menu
         {
             this.bun = false;
             ingredients.Remove("Whole Wheat Bun");
+            special.Add("Hold Bun");
         }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace DinoDiner.Menu
         {
             this.pickle = false;
             ingredients.Remove("Pickle");
+            special.Add("Hold Pick");
         }
         /// <summary>
         /// Hold ketchup
@@ -63,6 +65,7 @@ namespace DinoDiner.Menu
         {
             this.ketchup = false;
             ingredients.Remove("Ketchup");
+            special.Add("Hold Ketchup");
         }
         /// <summary>
         /// Hold mustard
@@ -71,6 +74,7 @@ namespace DinoDiner.Menu
         {
             this.mustard = false;
             ingredients.Remove("Mustard");
+            special.Add("Hold Mustard");
         }
 
         /// <summary>
@@ -79,6 +83,7 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             ingredients.Remove("Lettuce");
+            special.Add("Hold Mustard");
             this.lettuce = false;
         }
 
@@ -88,6 +93,7 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             ingredients.Remove("Tomato");
+            special.Add("Hold Tomato");
             this.tomato = false;
         }
 
@@ -97,6 +103,7 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             ingredients.Remove("Onion");
+            special.Add("Hold Onion");
             this.onion = false;
         }
 
@@ -106,6 +113,7 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             ingredients.Remove("Mayo");
+            special.Add("Hold Mayo");
             this.mayo = false;
         }
 

@@ -38,6 +38,7 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldBun();
             Assert.DoesNotContain<string>("Whole Wheat Bun", bw.Ingredients);
+            Assert.Contains<string>("Hold Bun", bw.Special);
         }
 
         [Fact]
@@ -46,6 +47,7 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldPeppers();
             Assert.DoesNotContain<string>("Peppers", bw.Ingredients);
+            Assert.Contains<string>("Hold Peppers", bw.Special);
         }
 
         [Fact]
@@ -54,6 +56,7 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldOnion();
             Assert.DoesNotContain<string>("Onion", bw.Ingredients);
+            Assert.Contains<string>("Hold Onion", bw.Special);
         }
     }
 

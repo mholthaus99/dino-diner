@@ -12,12 +12,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <WrapPanel Grid.Row="0" Grid.ColumnSpan="2">
+        <WrapPanel Name="DrinkWrapPanel" Grid.Row="0" Grid.ColumnSpan="2">
             <WrapPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Width" Value="200"></Setter>
@@ -25,20 +26,22 @@
                 </Style>
             </WrapPanel.Resources>
             <Button Click="SodaClick">Sodasaurus</Button>
-            <Button Click="TeaClick">Tryrannotea</Button>
+            <Button Click="TeaClick">Tyrannotea</Button>
             <Button Click="JavaClick">Jurassic Java</Button>
             <Button Click="WaterClick">Water</Button>
         </WrapPanel>
         <StackPanel Grid.Row="1">
-            <RadioButton>Small</RadioButton>
-            <RadioButton>Medium</RadioButton>
-            <RadioButton>Large</RadioButton>
+            <RadioButton Click="SizeClicked">Small</RadioButton>
+            <RadioButton Click="SizeClicked">Medium</RadioButton>
+            <RadioButton Click="SizeClicked">Large</RadioButton>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel Name="SizeStackPanel" Grid.Row="1" Grid.Column="1">
             <Button Click="FlavorClick" x:Name="FlavorButton">Flavor</Button>
-            <RadioButton x:Name="LemonButton">Lemon</RadioButton>
-            <RadioButton x:Name="DecafButton">Decaf</RadioButton>
-            <RadioButton x:Name="SweetButton">Sweet</RadioButton>
+            <RadioButton Click="LemonClick" x:Name="LemonButton">Lemon</RadioButton>
+            <RadioButton Click="DecafClick" x:Name="DecafButton">Decaf</RadioButton>
+            <RadioButton Click="SweetClick" x:Name="SweetButton">Sweet</RadioButton>
         </StackPanel>
+        <Button Click="DoneClicked" Grid.Row="2" Grid.ColumnSpan="2">Done</Button>
+                
     </Grid>
 </Page>

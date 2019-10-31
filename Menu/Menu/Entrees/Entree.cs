@@ -36,6 +36,33 @@ namespace DinoDiner.Menu
                 return new List<string>(ingredients);
             }
         }
-       
+
+        /// <summary>
+        /// Gets the description
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Special list for derived classes.
+        /// </summary>
+        protected readonly List<string> special = new List<string>();
+
+        /// <summary>
+        /// special details on item
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                return this.special.ToArray();
+            }
+        }
+
     }
 }

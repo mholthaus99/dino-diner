@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -8,7 +9,7 @@ namespace DinoDiner.Menu
     /// JurrasicJava class
     /// JurassicJava
     /// </summary>
-    public class JurassicJava : Drink, IMenuItem
+    public class JurassicJava : Drink, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         private Size size = Size.Small;
         /// <summary>
@@ -38,8 +39,14 @@ namespace DinoDiner.Menu
                         Calories = 8;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// JurrasicJava constructor
@@ -58,11 +65,23 @@ namespace DinoDiner.Menu
        
 
         private bool roomForCream = false;
+        private bool decaf = false;
 
         /// <summary>
         /// gets/sets decaf
         /// </summary>
-        public bool Decaf { get; set; } = true;
+        public bool Decaf
+        {
+            get
+            {
+                return this.decaf;
+            }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
         
         /// <summary>
         /// gets RoomForCream property
@@ -71,9 +90,12 @@ namespace DinoDiner.Menu
         {
             get
             {
+                
                 return this.roomForCream;
             }
         }
+
+      
 
         /// <summary>
         /// Leaves room for cream
@@ -81,6 +103,8 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             roomForCream = true;
+            special.Add("Leave Room For Cream");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -88,7 +112,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddIce()
         {
+            special.Add("Add Ice");
             Ice = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -107,6 +133,11 @@ namespace DinoDiner.Menu
             //Decaf Jurassic Java
 
             return base.SizeToString() + " " + drinkName;
+        }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

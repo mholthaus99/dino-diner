@@ -58,6 +58,7 @@ namespace MenuTest.Drinks
             Tyrannotea s = new Tyrannotea();
             s.HoldIce();
             Assert.False(s.Ice);
+            Assert.Contains<string>("Hold Ice", s.Special);
         }
 
         //4
@@ -119,6 +120,7 @@ namespace MenuTest.Drinks
             Tyrannotea s = new Tyrannotea();
             s.AddLemon();
             Assert.Contains<string>("Lemon", s.Ingredients);
+            Assert.Contains<string>("Add Lemon", s.Special);
         }
 
         [Fact]
@@ -129,6 +131,7 @@ namespace MenuTest.Drinks
                 Sweet = true
             };
             Assert.Contains<string>("Cane Sugar", s.Ingredients);
+        
         }
 
         //2

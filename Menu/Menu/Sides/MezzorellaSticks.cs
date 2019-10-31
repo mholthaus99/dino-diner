@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// MexxorellaSticks side class
     /// </summary>
-    public class MezzorellaSticks : Side, IMenuItem
+    public class MezzorellaSticks : Side, IMenuItem, IOrderItem
     {
 
         private Size size = Size.Small;

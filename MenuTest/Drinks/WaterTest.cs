@@ -52,6 +52,7 @@ namespace MenuTest.Drinks
             Water s = new Water();
             s.HoldIce();
             Assert.False(s.Ice);
+            Assert.Contains<string>("Hold Ice", s.Special);
         }
 
         //4

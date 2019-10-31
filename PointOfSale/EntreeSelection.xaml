@@ -9,7 +9,7 @@
       Title="EntreeSelection">
 
     <Grid>
-        <WrapPanel>
+        <WrapPanel Name="WrapPanel">
             <WrapPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Width" Value="150"></Setter>
@@ -17,7 +17,7 @@
                 </Style>
             </WrapPanel.Resources>
             <Button>Brontowurst</Button>
-            <Button>Dino-Nuggests</Button>
+            <Button>Dino-Nuggets</Button>
             <Button>Steakosaurus Burger</Button>
             <Button>T-Rex King Burger</Button>
             <Button>Prehistoric PB&amp;J</Button>

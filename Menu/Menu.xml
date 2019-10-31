@@ -53,6 +53,16 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Special">
+            <summary>
+            Special
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Description">
+            <summary>
+            Description of combo
+            </summary>
+        </member>
         <member name="T:DinoDiner.Menu.Drink">
             <summary>
             Base class for Drinks
@@ -97,6 +107,21 @@
         <member name="M:DinoDiner.Menu.Drink.HoldIce">
             <summary>
             Holds ice in drink
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drink.Description">
+            <summary>
+            Description of item
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drink.special">
+            <summary>
+            special for use by derived classes
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drink.Special">
+            <summary>
+            Special property for use
             </summary>
         </member>
         <member name="T:DinoDiner.Menu.JurassicJava">
@@ -357,6 +382,21 @@
             </summary>
             
         </member>
+        <member name="P:DinoDiner.Menu.Entree.Description">
+            <summary>
+            Gets the description
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Entree.special">
+            <summary>
+            Special list for derived classes.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entree.Special">
+            <summary>
+            special details on item
+            </summary>
+        </member>
         <member name="T:DinoDiner.Menu.PrehistoricPBJ">
             <summary>
             PrehistoricPBJ entree class
@@ -542,6 +582,44 @@
             Ingredients contained in menu item
             </summary>
         </member>
+        <member name="T:DinoDiner.Menu.Order">
+            <summary>
+            Order object
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.Items">
+            <summary>
+            Items
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.SubtotalCost">
+            <summary>
+            Subtotal cost
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Order.#ctor">
+            <summary>
+            Creates new order instance
+            </summary>
+        </member>
+        <member name="E:DinoDiner.Menu.Order.PropertyChanged">
+            <summary>
+            Idk honestly
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Order.OnCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Collection Changed
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DinoDiner.Menu.Order.NotifyPropertyChanged(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
         <member name="T:DinoDiner.Menu.Fryceritops">
             <summary>
             Fryceritops side class
@@ -660,6 +738,16 @@
             Return size as string
             </summary>
             <returns></returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Side.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Side.Special">
+            <summary>
+            Side special
+            </summary>
         </member>
         <member name="T:DinoDiner.Menu.Triceritots">
             <summary>

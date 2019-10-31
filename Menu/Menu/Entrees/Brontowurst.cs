@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu { 
     /// <summary>
     /// Brontowurst entree class
     /// </summary>
-    public class Brontowurst : Entree, IMenuItem
+    public class Brontowurst : Entree, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         private bool bun = true;
         private bool peppers = true;
         private bool onions = true;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Brontowurst constructor
@@ -35,8 +43,10 @@ namespace DinoDiner.Menu {
             if (bun)
             {
                 ingredients.Remove("Whole Wheat Bun");
+                special.Add("Hold Bun");
             }
             this.bun = false;
+            this.NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -47,8 +57,10 @@ namespace DinoDiner.Menu {
             if (peppers)
             {
                 ingredients.Remove("Peppers");
+                special.Add("Hold Peppers");
             }
             this.peppers = false;
+            this.NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -59,8 +71,10 @@ namespace DinoDiner.Menu {
             if (onions)
             {
                 ingredients.Remove("Onion");
+                special.Add("Hold Onion");
             }
             this.onions = false;
+            this.NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
