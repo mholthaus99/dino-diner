@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    interface IOrderItem
+    public interface IOrderItem: INotifyPropertyChanged
     {
         double Price { get; }
 

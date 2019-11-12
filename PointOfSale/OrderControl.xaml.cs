@@ -39,13 +39,14 @@ namespace PointOfSale
 
         private void OnRemoveOrderItem(object sender, RoutedEventArgs args)
         {
-            var item = (sender as FrameworkElement).DataContext;
-            int index = OrderList.Items.IndexOf(item);
-            Console.Write(DataContext.ToString());
+            var elemDataContext = (sender as FrameworkElement).DataContext;
 
             if (DataContext is Order order)
             {
-                order.OrderItems.RemoveAt(index);
+                if (elemDataContext is IOrderItem item)
+                {
+                    order.Remove(item);
+                }
             }
            
         }

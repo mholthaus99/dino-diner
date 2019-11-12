@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -14,24 +15,21 @@ namespace DinoDiner.Menu
         /// </summary>
         public int NuggetCount { get; set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// adds nugget to side order
         /// </summary>
         public void AddNugget()
         {
+            ingredients.Add("Chicken Nugget");
             NuggetCount++;
             Calories += 59;
             Price += 0.25;
-            ingredients.Add("Chicken Nugget");
 
-            if(NuggetCount > 6)
-            {
-                if (NuggetCount > 7)
-                {
-                    special.Remove((NuggetCount - 1) + " Extra Nuggets");
-                }
-                special.Add(NuggetCount + " Extra Nuggets");
-            }
+            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChanged("Price");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -49,6 +47,19 @@ namespace DinoDiner.Menu
             }
         }
 
+        public new string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (NuggetCount > 6)
+                {
+                    special.Add($"{NuggetCount - 6} Extra Nuggets");
+                }
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// Entree name as string
         /// </summary>
@@ -56,6 +67,11 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Dino-Nuggets";
+        }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

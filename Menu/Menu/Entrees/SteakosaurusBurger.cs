@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -14,6 +15,8 @@ namespace DinoDiner.Menu
         private bool pickle = true;
         private bool ketchup = true;
         private bool mustard = true;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// SteakosaurusBurger constructor
@@ -39,6 +42,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Whole Wheat Bun");
             special.Add("Hold Bun");
             this.bun = false;
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Hold pickle
@@ -48,6 +52,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Pickle");
             special.Add("Hold Pickle");
             this.pickle = false;
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Hold ketchup
@@ -57,6 +62,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Ketchup");
             special.Add("Hold Ketchup");
             this.ketchup = false;
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Hold mustard
@@ -66,6 +72,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Mustard");
             special.Add("Hold Mustard");
             this.mustard = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -76,5 +83,11 @@ namespace DinoDiner.Menu
         {
             return "Steakosaurus Burger";
         }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }

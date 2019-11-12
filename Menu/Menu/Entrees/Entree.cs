@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -7,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Entree base class
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree: IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -52,6 +53,8 @@ namespace DinoDiner.Menu
         /// Special list for derived classes.
         /// </summary>
         protected readonly List<string> special = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// special details on item

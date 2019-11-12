@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using DinoDiner.Menu;
 
@@ -12,7 +13,9 @@ namespace DinoDiner.Menu
     {
 
         private Size size = Size.Small;
-        
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// gets/sets the side size
         /// </summary>
@@ -40,6 +43,8 @@ namespace DinoDiner.Menu
                         Calories = 480;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -65,6 +70,11 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return base.SizeToString() + " " + "Fryceritops";
+        }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

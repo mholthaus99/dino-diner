@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,6 +11,8 @@ namespace DinoDiner.Menu
     public class Triceritots : Side, IMenuItem, IOrderItem
     {
         private Size size = Size.Small;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// gets/sets the side size
@@ -38,6 +41,9 @@ namespace DinoDiner.Menu
                         Calories = 590;
                         break;
                 }
+
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -63,6 +69,11 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return base.SizeToString() + " " + "Triceritots";
+        }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -9,7 +9,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Base class for Drinks
     /// </summary>
-    public abstract class Drink : INotifyPropertyChanged
+    public abstract class Drink : INotifyPropertyChanged, IOrderItem, IMenuItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -64,7 +64,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public abstract Size Size { get; set; }
 
-        private bool ice = true;
+        private bool _ice = true;
         /// <summary>
         /// Gets or sets ice
         /// </summary>
@@ -72,11 +72,12 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return this.ice;
+                return this._ice;
             }
             set
             {
-                this.ice = value;
+                this._ice = value;
+                NotifyOfPropertyChanged("Special");
 
             }
         }
@@ -86,9 +87,9 @@ namespace DinoDiner.Menu
      /// </summary>
         public void HoldIce()
         {
-            this.ice = false;
+            _ice = false;
             special.Add("Hold Ice");
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Special"));
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -117,6 +118,11 @@ namespace DinoDiner.Menu
             {
                 return special.ToArray();
             }
+        }
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
     }

@@ -21,6 +21,11 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+
+        private bool _forCombo;
+        CretaceousCombo _combo;
+           private Side side;
+        /*
         public SideSelection()
         {
             InitializeComponent();
@@ -33,8 +38,33 @@ namespace PointOfSale
 
             SizeStackPanel.Visibility = Visibility.Hidden;
         }
+        */
 
-        private Side side;
+        public SideSelection()
+        {
+            _forCombo = false;
+            Init();
+        }
+
+        public SideSelection(CretaceousCombo combo)
+        {
+            _combo = combo;
+            _forCombo = true;
+            Init();
+        }
+
+        private void Init()
+        {
+            InitializeComponent();
+            foreach (UIElement elem in WrapPanel.Children)
+            {
+                Button btn = (Button)elem;
+                btn.Click += this.SideItemSelected;
+            }
+
+            SizeStackPanel.Visibility = Visibility.Hidden;
+        }
+     
 
         private void SideItemSelected(object sender, RoutedEventArgs e)
         {
@@ -61,7 +91,13 @@ namespace PointOfSale
 
             if (side != null)
             {
-                SizeStackPanel.Visibility = Visibility.Visible;
+                if (_forCombo)
+                {
+                    _combo.Side = side;
+                } else
+                {
+                    SizeStackPanel.Visibility = Visibility.Visible;
+                }
             }
            
         }
@@ -87,8 +123,8 @@ namespace PointOfSale
 
             if (DataContext is Order order)
             {
-                order.OrderItems.Add(side as IMenuItem);
-                CollectionViewSource.GetDefaultView(order.OrderItems).MoveCurrentToLast();
+                order.Add(side as IOrderItem);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.GoBack();
             }
         }

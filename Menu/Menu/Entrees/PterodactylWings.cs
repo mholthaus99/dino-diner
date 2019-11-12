@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -20,6 +21,8 @@ namespace DinoDiner.Menu
             ingredients.Add("Chicken");
             ingredients.Add("Wing Sauce");
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Entree name as string.

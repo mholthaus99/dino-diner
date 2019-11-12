@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -9,6 +10,8 @@ namespace DinoDiner.Menu
     {
         private bool peanutButter = true;
         private bool jelly = true;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// PrehistoricPBJ constructor
@@ -34,6 +37,7 @@ namespace DinoDiner.Menu
             special.Add("Hold Peanut Butter");
             
             this.peanutButter = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -44,6 +48,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Jelly");
             special.Add("Hold Jelly");
             this.jelly = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -55,6 +60,10 @@ namespace DinoDiner.Menu
             return "Prehistoric PB&J";
         }
 
-      
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
 }

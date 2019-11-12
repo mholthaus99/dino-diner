@@ -101,7 +101,7 @@ namespace DinoDiner.Menu
         }
        
 
-        public event PropertyChangedEventHandler PropertyChanged;
+     //   public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Sodasaurus constructor
@@ -157,10 +157,12 @@ namespace DinoDiner.Menu
             return base.SizeToString() + " " + flavorName + " "+ "Sodasaurus";
         }
 
+        /*
         protected void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        */
 
     }
 }

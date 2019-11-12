@@ -47,6 +47,7 @@ namespace DinoDiner.Menu {
             }
             this.bun = false;
             this.NotifyOfPropertyChanged("Special");
+            
         }
 
         /// <summary>

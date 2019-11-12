@@ -83,6 +83,24 @@
     <Compile Include="ComboCustomize.xaml.cs">
       <DependentUpon>ComboCustomize.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomizeEntreePages\CustomizeBronto.xaml.cs">
+      <DependentUpon>CustomizeBronto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeEntreePages\CustomizeNugget.xaml.cs">
+      <DependentUpon>CustomizeNugget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeEntreePages\CustomizePBJ.xaml.cs">
+      <DependentUpon>CustomizePBJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeEntreePages\CustomizeSteak.xaml.cs">
+      <DependentUpon>CustomizeSteak.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeEntreePages\CustomizeTRex.xaml.cs">
+      <DependentUpon>CustomizeTRex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeEntreePages\CustomizeVeloci.xaml.cs">
+      <DependentUpon>CustomizeVeloci.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
     </Compile>
@@ -100,6 +118,30 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ComboSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeEntreePages\CustomizeBronto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeEntreePages\CustomizeNugget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeEntreePages\CustomizePBJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeEntreePages\CustomizeSteak.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeEntreePages\CustomizeTRex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeEntreePages\CustomizeVeloci.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,5 +226,6 @@
       <Name>Menu</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Tyrannotea : Drink, IMenuItem, IOrderItem, INotifyPropertyChanged { 
 
-        public event PropertyChangedEventHandler PropertyChanged;
+      //  public event PropertyChangedEventHandler PropertyChanged;
     
         private Size size = Size.Small;
 
@@ -139,10 +139,12 @@ namespace DinoDiner.Menu
             return base.SizeToString() + sweetString + "Tyrannotea";
         }
 
+        /*
         protected void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        */
 
     }
 }

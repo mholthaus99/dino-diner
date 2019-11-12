@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Order" TextAlignment="Right" FontWeight="Bold"/>
         <TextBlock Text="#" FontWeight="Bold" Margin="5,0,0,0" Grid.Column="1"/>
-        <ListBox x:Name="OrderList" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=OrderItems, UpdateSourceTrigger=PropertyChanged}">
+        <ListBox x:Name="OrderList" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid MinWidth="180">

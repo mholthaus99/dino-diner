@@ -21,6 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+      
         public EntreeSelection()
         {
             InitializeComponent();
@@ -42,29 +43,40 @@ namespace PointOfSale
                 switch (itemName)
                 {
                     case "Brontowurst":
-                        order.OrderItems.Add(new Brontowurst());
+                        Brontowurst bronto = new Brontowurst();
+                        order.Add(bronto);
+                        NavigationService.Navigate(new CustomizeBronto(bronto));
                         break;
                     case "Dino-Nuggets":
-                        order.OrderItems.Add(new DinoNuggets());
+                        DinoNuggets nuggets = new DinoNuggets();
+                        order.Add(nuggets);
+                        NavigationService.Navigate(new CustomizeNugget(nuggets));
                         break;
                     case "Steakosaurus Burger":
-                        order.OrderItems.Add(new SteakosaurusBurger());
+                        SteakosaurusBurger steak = new SteakosaurusBurger();
+                        order.Add(steak);
+                        NavigationService.Navigate(new CustomizeSteak(steak));
                         break;
                     case "T-Rex King Burger":
-                        order.OrderItems.Add(new TRexKingBurger());
+                        TRexKingBurger tRex = new TRexKingBurger();
+                        order.Add(tRex);
+                        NavigationService.Navigate(new CustomizeTRex(tRex));
                         break;
                     case "Prehistoric PB&J":
-                        order.OrderItems.Add(new PrehistoricPBJ());
+                        PrehistoricPBJ pbj = new PrehistoricPBJ();
+                        order.Add(pbj);
+                        NavigationService.Navigate(new CustomizePBJ(pbj));
                         break;
                     case "Veloci-Wrap":
-                        order.OrderItems.Add(new VelociWrap());
+                        VelociWrap veloci = new VelociWrap();
+                        order.Add(veloci);
+                        NavigationService.Navigate(new CustomizeVeloci(veloci));
                         break;
                     case "Pterodactyl Wings":
-                        order.OrderItems.Add(new PterodactylWings());
+                        order.Add(new PterodactylWings());
                         break;
                 }
-                CollectionViewSource.GetDefaultView(order.OrderItems).MoveCurrentToLast();
-                NavigationService.GoBack();
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
         }
     }

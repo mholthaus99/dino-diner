@@ -21,7 +21,27 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        private bool _forCombo;
+        private CretaceousCombo _combo;
+        private Drink drink;
+
         public DrinkSelection()
+        {
+            _forCombo = false;
+            Init();
+         
+        }
+
+        public DrinkSelection(CretaceousCombo combo)
+        {
+            _forCombo = true;
+            this._combo = combo;
+           
+            Init();
+            SizeButtonStack.Visibility = Visibility.Hidden;
+        }
+
+        private void Init()
         {
             InitializeComponent();
             HideAllButtons();
@@ -30,11 +50,7 @@ namespace PointOfSale
                 Button btn = (Button)elem;
                 btn.Click += this.DrinkItemSelected;
             }
-
-         
         }
-
-        private Drink drink;
 
         private void DrinkItemSelected(object sender, RoutedEventArgs e)
         {
@@ -61,10 +77,17 @@ namespace PointOfSale
 
             if (drink != null)
             {
-                   if (DataContext is Order order)
+                if (_forCombo)
                 {
-                    order.OrderItems.Add(drink as IMenuItem);
-                    CollectionViewSource.GetDefaultView(order.OrderItems).MoveCurrentToLast();
+                    _combo.Drink = drink;
+                }
+                else
+                {
+                    if (DataContext is Order order)
+                    {
+                        order.Add(drink as IOrderItem);
+                        CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    }
                 }
             }
 
@@ -77,7 +100,7 @@ namespace PointOfSale
 
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.OrderItems).CurrentItem is Drink theDrink)
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink theDrink)
                 {
                     switch (sizeName)
                     {
@@ -100,11 +123,11 @@ namespace PointOfSale
 
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.OrderItems).CurrentItem is Water water)
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Water water)
                 {
                     water.AddLemon();
                 }
-                if (CollectionViewSource.GetDefaultView(order.OrderItems).CurrentItem is Tyrannotea tea)
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Tyrannotea tea)
                 {
                     tea.AddLemon();
                 }
@@ -114,7 +137,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.OrderItems).CurrentItem is Tyrannotea tea)
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Tyrannotea tea)
                 {
                     tea.Sweet = true;
                 }
@@ -125,7 +148,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.OrderItems).CurrentItem is JurassicJava java)
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is JurassicJava java)
                 {
                     java.Decaf = true;
                 }

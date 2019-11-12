@@ -57,7 +57,7 @@ namespace MenuTest.Entrees
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldKetchup();
             Assert.DoesNotContain<string>("Ketchup", sb.Ingredients);
-            Assert.Contains<string>("Hold Ketchup", sb.Ingredients);
+            Assert.Contains<string>("Hold Ketchup", sb.Special);
         }
 
         [Fact]

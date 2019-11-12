@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,19 +21,57 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboCustomize : Page
     {
-        public ComboCustomize()
+        private CretaceousCombo _combo;
+        public ComboCustomize(CretaceousCombo combo)
         {
+            this._combo = combo;
+          
+        
+             
             InitializeComponent();
         }
-
-        private void ChooseSide(object sender, RoutedEventArgs e)
+   
+        private void Click_CEntree(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SideSelection());
+            if(_combo.Entree is Brontowurst)
+            {
+                NavigationService.Navigate(new CustomizeBronto(_combo.Entree as Brontowurst));
+            }
+
+            if (_combo.Entree is DinoNuggets nuggets)
+            {
+                NavigationService.Navigate(new CustomizeNugget(nuggets));
+            }
+
+            if (_combo.Entree is PrehistoricPBJ pbj)
+            {
+                NavigationService.Navigate(new CustomizePBJ(pbj));
+            }
+
+            if (_combo.Entree is SteakosaurusBurger steak)
+            {
+                NavigationService.Navigate(new CustomizeSteak(steak));
+            }
+
+            if (_combo.Entree is TRexKingBurger tRex)
+            {
+                NavigationService.Navigate(new CustomizeTRex(tRex));
+            }
+
+            if (_combo.Entree is VelociWrap veloci)
+            {
+                NavigationService.Navigate(new CustomizeVeloci(veloci));
+            }
         }
 
-        private void ChooseDrink(object sender, RoutedEventArgs e)
+        private void Click_CSide(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new SideSelection(this._combo));
+        }
+
+        private void Click_CDrink(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DrinkSelection(this._combo));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -26,7 +27,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Base class of Side
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IOrderItem, IMenuItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -42,6 +43,8 @@ namespace DinoDiner.Menu
         /// ingredients accessible by derived clases
         /// </summary>
         protected readonly List<string> ingredients = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
 
         /// <summary>

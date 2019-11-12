@@ -36,7 +36,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.OrderItems).CurrentItem is Sodasaurus soda)
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     Button btn = (Button)sender;
                     string flavorName = btn.Content.ToString();

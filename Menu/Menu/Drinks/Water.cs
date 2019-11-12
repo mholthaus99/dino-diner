@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Water : Drink, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+      //  public event PropertyChangedEventHandler PropertyChanged;
 
         private Size _size;
         /// <summary>
@@ -26,6 +26,7 @@ namespace DinoDiner.Menu
             {
                 _size = value;
                 NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
         }
 
@@ -74,9 +75,11 @@ namespace DinoDiner.Menu
             return base.SizeToString() + " " + "Water";
         }
 
+        /*
         protected void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        */
     }
 }

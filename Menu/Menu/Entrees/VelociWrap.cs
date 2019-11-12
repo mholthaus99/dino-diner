@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -12,7 +13,9 @@ namespace DinoDiner.Menu
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
-   
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// VelociWrap constructor
         /// </summary>
@@ -38,6 +41,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Ceasar Dressing");
             special.Add("Hold Dressing");
             this.dressing = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -48,6 +52,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Romaine Lettuce");
             special.Add("Hold Lettuce");
             this.lettuce = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -58,6 +63,7 @@ namespace DinoDiner.Menu
             ingredients.Remove("Parmesan Cheese");
             special.Add("Hold Cheese");
             this.cheese = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -69,5 +75,9 @@ namespace DinoDiner.Menu
             return "Veloci-Wrap";
         }
 
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
