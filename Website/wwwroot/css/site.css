@@ -12,3 +12,28 @@ body {
     padding-right: 15px;
 }
 
+
+
+form {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 300px;
+    text-align: right;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+form > h4 {
+    text-align: left;
+}
+
+form > label {
+    text-align: left;
+}

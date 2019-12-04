@@ -23,11 +23,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Generates and returns a list of all available entrees on the menu.
         /// </summary>
-        public List<Entree> AvailableEntrees
+        public List<IMenuItem> AvailableEntrees
         {
             get
             {
-                return new List<Entree>
+                return new List<IMenuItem>
                 {
                     new SteakosaurusBurger(),
                     new TRexKingBurger(),
@@ -43,11 +43,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Generates and returns a list of all available sides on the menu.
         /// </summary>
-        public List<Side> AvailableSides
+        public List<IMenuItem> AvailableSides
         {
             get
             {
-                return new List<Side>
+                return new List<IMenuItem>
                 {
                     new Fryceritops(),
                     new MeteorMacAndCheese(),
@@ -60,11 +60,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Generates and returns a list of all available drinks on the menu.
         /// </summary>
-        public List<Drink> AvailableDrinks
+        public List<IMenuItem> AvailableDrinks
         {
             get
             {
-                return new List<Drink>
+                return new List<IMenuItem>
                 {
                     new Sodasaurus(),
                     new JurassicJava(),
@@ -77,11 +77,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Generates and returns a list of all available combos on the menu.
         /// </summary>
-        public List<CretaceousCombo> AvailableCombos
+        public List<IMenuItem> AvailableCombos
         {
             get
             {
-                List<CretaceousCombo> combos = new List<CretaceousCombo>();
+                List<IMenuItem> combos = new List<IMenuItem>();
 
                 foreach (Entree entree in AvailableEntrees)
                 {
@@ -100,53 +100,144 @@ namespace DinoDiner.Menu
         {
             return "hey";
         }
-        /*
-        public List<IMenuItem> AvailableMenuItems { get; }
-        public List<IMenuItem> AvailableEntrees { get; }
-        public List<IMenuItem> AvailableDrinks { get; }
-        public List<IMenuItem> AvailableSides { get; }
 
-        public List<IMenuItem> AvailableCombos { get; }
-
-        public Menu()
+        public List<IMenuItem> Search(List<IMenuItem> items, string term)
         {
-            AvailableEntrees.Add(new Brontowurst());
-            AvailableEntrees.Add(new DinoNuggets());
-            AvailableEntrees.Add(new PrehistoricPBJ());
-            AvailableEntrees.Add(new PterodactylWings());
-            AvailableEntrees.Add(new SteakosaurusBurger());
-            AvailableEntrees.Add(new TRexKingBurger());
-            AvailableEntrees.Add(new VelociWrap());
+            List<IMenuItem> results = new List<IMenuItem>();
 
-            AvailableSides.Add(new Fryceritops());
-            AvailableSides.Add(new MeteorMacAndCheese());
-            AvailableSides.Add(new MezzorellaSticks());
-            AvailableSides.Add(new Triceritots());
-
-            AvailableDrinks.Add(new JurassicJava());
-            AvailableDrinks.Add(new Sodasaurus());
-            AvailableDrinks.Add(new Tyrannotea());
-            AvailableDrinks.Add(new Water());
-
-            AvailableCombos.Add(new CretaceousCombo(new Brontowurst()));
-
-            AvailableMenuItems.AddRange(AvailableCombos);
-            AvailableMenuItems.AddRange(AvailableEntrees);
-            AvailableMenuItems.AddRange(AvailableDrinks);
-            AvailableMenuItems.AddRange(AvailableSides);
-        }
-
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            foreach(IMenuItem item in AvailableMenuItems)
+            if (term != "")
             {
-                sb.Append(item.ToString());
-                sb.Append("\n");
+                foreach (IMenuItem currentItem in items)
+                {
+                    string currentItemString = currentItem.ToString().ToLower();
+                    if (currentItemString.Contains(term.ToLower()))
+                    {
+                        results.Add(currentItem);
+                    }
+                }
             }
-            return sb.ToString();
+            return results;
         }
-        */
+
+        public List<string> PossibleIngredients
+        {
+            get
+            {
+                HashSet<string> availableIngredients = new HashSet<string>();
+                foreach (IMenuItem menuItem in AvailableMenuItems)
+                {
+                    foreach (string ingredient in menuItem.Ingredients)
+                    {
+                        availableIngredients.Add(ingredient);
+                    }
+                }
+                return new List<string>(availableIngredients);
+            }
+        }
+
+        /// <summary>
+        /// Filter by specific menu category that user chooses e.g. entree, side, combo, drink
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterByMenuCategory(List<IMenuItem> items, List<string> filter)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            foreach (IMenuItem currentItem in items)
+            {
+                if (currentItem is Entree && filter.Contains("Entree"))
+                {
+                    results.Add(currentItem);
+                }
+                if (currentItem is Drink && filter.Contains("Drink"))
+                {
+                    results.Add(currentItem);
+                }
+                if (currentItem is Side && filter.Contains("Side"))
+                {
+                    results.Add(currentItem);
+                }
+                if (currentItem is CretaceousCombo && filter.Contains("Combo"))
+                {
+                    results.Add(currentItem);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Filters by min price specified by user
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="min"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterByMinPrice(List<IMenuItem> items, float min)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem currentItem in items)
+            {
+                if (currentItem.Price >= min)
+                {
+                    results.Add(currentItem);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Filtesr by max price specified by user
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterByMaxPrice(List<IMenuItem> items, float max)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem currentItem in items)
+            {
+                if (currentItem.Price <= max)
+                {
+                    results.Add(currentItem);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Filters by excluded ingredients specified by user
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="excludedIngredients"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterByExcludedIngredients(List<IMenuItem> items, List<string> excludedIngredients)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            bool good = true;
+            foreach (IMenuItem currentItem in items)
+            {
+                foreach (string badIngredient in excludedIngredients)
+                {
+                    if (currentItem.Ingredients.Contains(badIngredient))
+                    {
+                        good = false;
+                        break;
+                    }
+                }
+
+                if (good)
+                {
+                    results.Add(currentItem);
+                }
+            }
+
+            return results;
+        }
     }
+
 }
+

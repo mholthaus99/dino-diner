@@ -3,91 +3,167 @@
 @{
     ViewData["Title"] = "Menu";
 }
+<div class="container">
 
-<h1>Menu</h1>
+    <div class="items">
 
-<h2>Combos</h2>
-
-@foreach (DinoDiner.Menu.CretaceousCombo c in Model.M.AvailableCombos)
-{
-    <div class="menu-item">
-        <h3>@c.Description</h3>
-        <p>$@c.Price</p>
-        <p>@c.Calories calories</p>
-        <p>Ingredients:</p>
-        <div class="ingredients">
-            <ul>
-                @foreach (string i in c.Ingredients)
-                {
-
-                    <li>@i</li>
-                }
-            </ul>
-        </div>
+        <h1>Menu</h1>
 
     </div>
-}
+    <form method="post">
+        <h4>Search</h4>
 
-<h2>Entrees</h2>
+        <input type="text" name="search" id="search" value="@Model.search" />
 
-@foreach (DinoDiner.Menu.Entree c in Model.M.AvailableEntrees)
+        <input type="submit" name="filter" id="filter" value="Search and Filter" />
+
+        <h4>Menu Category</h4>
+
+        <label>
+            <input type="checkbox" class="menu-category" name="menuCategory" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
+            Combo
+        </label>
+
+        <label>
+            <input type="checkbox" class="menu-category" name="menuCategory" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
+            Entree
+        </label>
+
+        <label>
+            <input type="checkbox" class="menu-category" name="menuCategory" value="Side" checked="@Model.menuCategory.Contains("Side")" />
+            Side
+        </label>
+
+        <label>
+            <input type="checkbox" class="menu-category" name="menuCategory" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
+            Drink
+        </label>
+
+        <h4>Price</h4>
+
+        <label>
+            Minimum Price:
+            <input type="number" id="minimum-price" name="minimumPrice" value="@Model.minimumPrice" />
+        </label>
+
+        <label>
+            Maximum Price:
+            <input type="number" id="maximum-price" name="maximumPrice" value="@Model.maximumPrice" />
+        </label>
+
+        <h4>Excluding Ingredients</h4>
+
+        @for (int i = 0; i < Model.M.PossibleIngredients.Count; i++)
+        {
+            <label>
+                <input type="checkbox" class="exclude-ingredients" name="excludedIngredients" value="@Model.M.PossibleIngredients[i]" checked="@Model.excludedIngredients.Contains(Model.M.PossibleIngredients[i])" />
+                @Model.M.PossibleIngredients[i];
+            </label>
+        }
+    </form>
+</div>
+
+
+
+@if (Model.AvailableCombos != null && Model.AvailableCombos.Count > 0)
 {
-    <div class="menu-item">
-        <h3>@c.Description</h3>
-        <p>$@c.Price</p>
-        <p>@c.Calories calories</p>
-        <p>Ingredients:</p>
-        <div class="ingredients">
-            <ul>
-                @foreach (string i in c.Ingredients)
-                {
+    <h2>Combos</h2>
+    @foreach (DinoDiner.Menu.CretaceousCombo c in Model.AvailableCombos)
+    {
+        <div class="menu-item">
+            <h3>@c.Description</h3>
+            <p>$@c.Price</p>
+            <p>@c.Calories calories</p>
+            <p>Ingredients:</p>
+            <div class="ingredients">
+                <ul>
+                    @foreach (string i in c.Ingredients)
+                    {
 
-                    <li>@i</li>
-                }
-            </ul>
+                        <li>@i</li>
+                    }
+                </ul>
+            </div>
+
         </div>
-
-    </div>
+    }
 }
-<h2>Sides</h2>
 
-@foreach (DinoDiner.Menu.Side c in Model.M.AvailableSides)
+
+@if (Model.AvailableEntrees != null && Model.AvailableEntrees.Count > 0)
 {
-    <div class="menu-item">
-        <h3>@c.Description</h3>
-        <p>$@c.Price</p>
-        <p>@c.Calories calories</p>
-        <p>Ingredients:</p>
-        <div class="ingredients">
-            <ul>
-                @foreach (string i in c.Ingredients)
-                {
+    <h2>Entrees</h2>
+    @foreach (DinoDiner.Menu.Entree c in Model.AvailableEntrees)
+    {
+        <div class="menu-item">
+            <h3>@c.Description</h3>
+            <p>$@c.Price</p>
+            <p>@c.Calories calories</p>
+            <p>Ingredients:</p>
+            <div class="ingredients">
+                <ul>
+                    @foreach (string i in c.Ingredients)
+                    {
 
-                    <li>@i</li>
-                }
-            </ul>
+                        <li>@i</li>
+                    }
+                </ul>
+            </div>
+
         </div>
-
-    </div>
+    }
 }
-<h2>Drinks</h2>
 
-@foreach (DinoDiner.Menu.Drink c in Model.M.AvailableDrinks)
+
+@if (Model.AvailableSides != null && Model.AvailableSides.Count > 0)
 {
-    <div class="menu-item">
-        <h3>@c.Description</h3>
-        <p>$@c.Price</p>
-        <p>@c.Calories calories</p>
-        <p>Ingredients:</p>
-        <div class="ingredients">
-            <ul>
-                @foreach (string i in c.Ingredients)
-                {
+    <h2>Sides</h2>
+    @foreach (DinoDiner.Menu.Side c in Model.AvailableSides)
+    {
+        <div class="menu-item">
+            <h3>@c.Description</h3>
+            <p>$@c.Price</p>
+            <p>@c.Calories calories</p>
+            <p>Ingredients:</p>
+            <div class="ingredients">
+                <ul>
+                    @foreach (string i in c.Ingredients)
+                    {
 
-                    <li>@i</li>
-                }
-            </ul>
+                        <li>@i</li>
+                    }
+                </ul>
+            </div>
+
         </div>
-
-    </div>
+    }
 }
+
+
+@if (Model.AvailableDrinks != null && Model.AvailableDrinks.Count > 0)
+{
+    <h2>Drinks</h2>
+    @foreach (DinoDiner.Menu.Drink c in Model.AvailableDrinks)
+    {
+        <div class="menu-item">
+            <h3>@c.Description</h3>
+            <p>$@c.Price</p>
+            <p>@c.Calories calories</p>
+            <p>Ingredients:</p>
+            <div class="ingredients">
+                <ul>
+                    @foreach (string i in c.Ingredients)
+                    {
+
+                        <li>@i</li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+    }
+}
+
+
+
+
