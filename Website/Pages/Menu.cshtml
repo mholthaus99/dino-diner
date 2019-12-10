@@ -57,7 +57,7 @@
         {
             <label>
                 <input type="checkbox" class="exclude-ingredients" name="excludedIngredients" value="@Model.M.PossibleIngredients[i]" checked="@Model.excludedIngredients.Contains(Model.M.PossibleIngredients[i])" />
-                @Model.M.PossibleIngredients[i];
+                @Model.M.PossibleIngredients[i]
             </label>
         }
     </form>
@@ -70,22 +70,36 @@
     <h2>Combos</h2>
     @foreach (DinoDiner.Menu.CretaceousCombo c in Model.AvailableCombos)
     {
-        <div class="menu-item">
-            <h3>@c.Description</h3>
-            <p>$@c.Price</p>
-            <p>@c.Calories calories</p>
-            <p>Ingredients:</p>
-            <div class="ingredients">
-                <ul>
-                    @foreach (string i in c.Ingredients)
-                    {
+<div class="menu-item">
+    <h3>@c.Description</h3>
+    <table border="1">
+        <tr>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Calories</th>
+        </tr>
+        @foreach (DinoDiner.Menu.Size s in Model.Sizes)
+        {
+            c.Size = s;
+            <tr>
+                <td>@c.Size</td>
+                <td>@c.Price</td>
+                <td>@c.Calories</td>
+            </tr>
+        }
+    </table>
+    <p>Ingredients:</p>
+    <div class="ingredients">
+        <ul>
+            @foreach (string i in c.Ingredients)
+            {
 
-                        <li>@i</li>
-                    }
-                </ul>
-            </div>
+                <li>@i</li>
+            }
+        </ul>
+    </div>
 
-        </div>
+</div>
     }
 }
 
@@ -97,7 +111,7 @@
     {
         <div class="menu-item">
             <h3>@c.Description</h3>
-            <p>$@c.Price</p>
+            <p>@c.Price</p>
             <p>@c.Calories calories</p>
             <p>Ingredients:</p>
             <div class="ingredients">
@@ -122,8 +136,24 @@
     {
         <div class="menu-item">
             <h3>@c.Description</h3>
-            <p>$@c.Price</p>
-            <p>@c.Calories calories</p>
+
+            <table border="1">
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Calories</th>
+                </tr>
+                @foreach (DinoDiner.Menu.Size s in Model.Sizes)
+                {
+                    c.Size = s;
+                    <tr>
+                        <td>@c.Size</td>
+                        <td>@c.Price</td>
+                        <td>@c.Calories</td>
+                    </tr>
+                }
+            </table>
+
             <p>Ingredients:</p>
             <div class="ingredients">
                 <ul>
@@ -145,22 +175,36 @@
     <h2>Drinks</h2>
     @foreach (DinoDiner.Menu.Drink c in Model.AvailableDrinks)
     {
-        <div class="menu-item">
-            <h3>@c.Description</h3>
-            <p>$@c.Price</p>
-            <p>@c.Calories calories</p>
-            <p>Ingredients:</p>
-            <div class="ingredients">
-                <ul>
-                    @foreach (string i in c.Ingredients)
-                    {
+<div class="menu-item">
+    <h3>@c.Description</h3>
+    <table border="1">
+        <tr>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Calories</th>
+        </tr>
+        @foreach (DinoDiner.Menu.Size s in Model.Sizes)
+        {
+            c.Size = s;
+            <tr>
+                <td>@c.Size</td>
+                <td>@c.Price</td>
+                <td>@c.Calories</td>
+            </tr>
+        }
+    </table>
+    <p>Ingredients:</p>
+    <div class="ingredients">
+        <ul>
+            @foreach (string i in c.Ingredients)
+            {
 
-                        <li>@i</li>
-                    }
-                </ul>
-            </div>
+                <li>@i</li>
+            }
+        </ul>
+    </div>
 
-        </div>
+</div>
     }
 }
 

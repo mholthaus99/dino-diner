@@ -9,7 +9,7 @@
             Represents a combo
             </summary>
         </member>
-        <member name="P:DinoDiner.Menu.CretaceousCombo.Entree">
+        <member name="F:DinoDiner.Menu.CretaceousCombo._entree">
             <summary>
             Entree of the combo
             </summary>
@@ -216,7 +216,7 @@
             gets/sets size of drink
             </summary>
         </member>
-        <member name="F:DinoDiner.Menu.Sodasaurus.Flavor">
+        <member name="F:DinoDiner.Menu.Sodasaurus._flavor">
             <summary>
             The drink flavor
             </summary>
@@ -237,6 +237,11 @@
             Tyrannotea drink class
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Tyrannotea.#ctor">
+            <summary>
+            Tyrannotea constructor
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Tyrannotea.Size">
             <summary>
             gets/sets size of drink
@@ -250,11 +255,6 @@
         <member name="P:DinoDiner.Menu.Tyrannotea.Lemon">
             <summary>
             gets Lemon property
-            </summary>
-        </member>
-        <member name="M:DinoDiner.Menu.Tyrannotea.#ctor">
-            <summary>
-            Tyrannotea constructor
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.Tyrannotea.AddLemon">
@@ -582,24 +582,40 @@
             Ingredients contained in menu item
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableEntrees">
+            <summary>
+            Generates and returns a list of all available entrees on the menu.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableSides">
+            <summary>
+            Generates and returns a list of all available sides on the menu.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableDrinks">
+            <summary>
+            Generates and returns a list of all available drinks on the menu.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableCombos">
+            <summary>
+            Generates and returns a list of all available combos on the menu.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Menu.ToString">
+            <summary>
+            Returns the entire contents of the menu separated by new line characters.
+            </summary>
+            <returns>A list of all menu contents separated by new line characters.</returns>
+        </member>
         <member name="T:DinoDiner.Menu.Order">
             <summary>
             Order object
             </summary>
         </member>
-        <member name="P:DinoDiner.Menu.Order.Items">
+        <member name="F:DinoDiner.Menu.Order._orderItems">
             <summary>
             Items
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Order.SubtotalCost">
-            <summary>
-            Subtotal cost
-            </summary>
-        </member>
-        <member name="M:DinoDiner.Menu.Order.#ctor">
-            <summary>
-            Creates new order instance
             </summary>
         </member>
         <member name="E:DinoDiner.Menu.Order.PropertyChanged">
@@ -607,12 +623,15 @@
             Idk honestly
             </summary>
         </member>
-        <member name="M:DinoDiner.Menu.Order.OnCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+        <member name="M:DinoDiner.Menu.Order.#ctor">
             <summary>
-            Collection Changed
+            Creates new order instance
             </summary>
-            <param name="sender"></param>
-            <param name="args"></param>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.SubtotalCost">
+            <summary>
+            Subtotal cost
+            </summary>
         </member>
         <member name="M:DinoDiner.Menu.Order.NotifyPropertyChanged(System.String)">
             <summary>

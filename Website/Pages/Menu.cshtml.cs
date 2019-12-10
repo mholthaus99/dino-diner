@@ -33,60 +33,76 @@ namespace Website.Pages
         public List<IMenuItem> AvailableSides { get; private set; } = null;
         public List<IMenuItem> AvailableDrinks { get; private set; } = null;
 
+        public List<Size> Sizes = new List<Size>();
+
         public void OnGet()
         {
             M = new Menu();
+         
         }
 
         public void OnPost()
         {
             M = new Menu();
-            AvailableCombos = M.AvailableCombos;
-            AvailableSides = M.AvailableSides;
-            AvailableDrinks = M.AvailableDrinks;
-            AvailableEntrees = M.AvailableEntrees;
 
-            if (search != null)
-            {
-                AvailableCombos = M.Search(AvailableCombos, search);
-                AvailableEntrees = M.Search(AvailableEntrees, search);
-                AvailableSides = M.Search(AvailableSides, search);
-                AvailableDrinks = M.Search(AvailableDrinks, search);
-            }
+            Sizes.Add(Size.Small);
+            Sizes.Add(Size.Medium);
+            Sizes.Add(Size.Large);
 
             if (menuCategory.Count > 0)
             {
-                AvailableCombos = M.FilterByMenuCategory(AvailableCombos, menuCategory);
-                AvailableEntrees = M.FilterByMenuCategory(AvailableEntrees, menuCategory);
-                AvailableSides = M.FilterByMenuCategory(AvailableSides, menuCategory);
-                AvailableDrinks = M.FilterByMenuCategory(AvailableDrinks, menuCategory);
+                if (menuCategory.Contains("Combo"))
+                {
+                    AvailableCombos = M.AvailableMenuItems.OfType<CretaceousCombo>().Cast<IMenuItem>().ToList();    //ToList();
+                }
+                if (menuCategory.Contains("Entree"))
+                {
+                    AvailableEntrees = M.AvailableMenuItems.OfType<Entree>().Cast<IMenuItem>().ToList();
+                }
+                if (menuCategory.Contains("Side"))
+                {
+                    AvailableSides = M.AvailableMenuItems.OfType<Side>().Cast<IMenuItem>().ToList();
+                }
+                if (menuCategory.Contains("Drink"))
+                {
+                    AvailableDrinks = M.AvailableMenuItems.OfType<Drink>().Cast<IMenuItem>().ToList();
+                }
             }
 
-         
+            if (search != null)
+            {
+                AvailableCombos = AvailableCombos?.Where(item => item.ToString().Contains(search)).ToList();
+                AvailableEntrees = AvailableEntrees?.Where(item => item.ToString().Contains(search)).ToList();
+                AvailableSides = AvailableSides?.Where(item => item.ToString().Contains(search)).ToList();
+                AvailableDrinks = AvailableDrinks?.Where(item => item.ToString().Contains(search)).ToList();
+            }
+
             if (minimumPrice is float min)
             {
-                AvailableCombos = M.FilterByMinPrice(AvailableCombos, min);
-                AvailableEntrees = M.FilterByMinPrice(AvailableEntrees, min);
-                AvailableDrinks = M.FilterByMinPrice(AvailableDrinks, min);
-                AvailableSides = M.FilterByMinPrice(AvailableSides, min);
+                AvailableCombos = AvailableCombos?.Where(item => item.Price > min).ToList();
+                AvailableEntrees = AvailableEntrees?.Where(item => item.Price > min).ToList();
+                AvailableSides = AvailableSides?.Where(item => item.Price > min).ToList();
+                AvailableDrinks = AvailableDrinks?.Where(item => item.Price > min).ToList();
             }
 
-          
             if (maximumPrice is float max)
             {
-                AvailableCombos = M.FilterByMaxPrice(AvailableCombos, max);
-                AvailableEntrees = M.FilterByMaxPrice(AvailableEntrees, max);
-                AvailableDrinks = M.FilterByMaxPrice(AvailableDrinks, max);
-                AvailableSides = M.FilterByMaxPrice(AvailableSides, max);
+                AvailableCombos = AvailableCombos?.Where(item => item.Price < max).ToList();
+                AvailableEntrees = AvailableEntrees?.Where(item => item.Price < max).ToList();
+                AvailableSides = AvailableSides?.Where(item => item.Price < max).ToList();
+                AvailableDrinks = AvailableDrinks?.Where(item => item.Price < max).ToList();
             }
 
          
             if (excludedIngredients.Count > 0)
             {
-                AvailableCombos = M.FilterByExcludedIngredients(AvailableCombos, excludedIngredients);
-                AvailableEntrees = M.FilterByExcludedIngredients(AvailableEntrees, excludedIngredients);
-                AvailableDrinks = M.FilterByExcludedIngredients(AvailableDrinks, excludedIngredients);
-                AvailableSides = M.FilterByExcludedIngredients(AvailableSides, excludedIngredients);
+                foreach (string s in excludedIngredients)
+                {
+                    AvailableCombos = AvailableCombos?.Where(item => !item.Ingredients.Contains(s)).ToList();
+                    AvailableEntrees = AvailableEntrees?.Where(item => !item.Ingredients.Contains(s)).ToList();
+                    AvailableSides = AvailableSides?.Where(item => !item.Ingredients.Contains(s)).ToList();
+                    AvailableDrinks = AvailableDrinks?.Where(item => !item.Ingredients.Contains(s)).ToList();
+                }
             }
         }
     }
